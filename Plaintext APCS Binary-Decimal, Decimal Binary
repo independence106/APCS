@@ -22,13 +22,10 @@ public int binartyToDecimal(String numstring) {
   
   #for loop which will calculate the sum
   for (int e; e <= arrayNum.length; e++) {
-    
+    sum += 2
   
   }
 
 
 }
 
-asdfasdfasdfasdf
-asdfasdf
-sajhdbfjasdfasfdjh
