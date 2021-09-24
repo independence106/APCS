@@ -12,8 +12,12 @@ A value in binary is a sequence of 1s and 0s, and each 1 and 0 can represent an 
    
    Ex: Our array is ["1", "0", "1"], where our counter e starts at 0. The correct conversion is 5. In our algorithm, our first run would add 2 to the power
    of 2-0(4), the second time, our array would run but input no number "0", finally we would add 2^2-2 (1), giving 5. 
+*/
 
-public int binartyToDecimal(String numstring) {
+#import math for exponents
+import Mathpackage # <-- fix
+
+public int binaryToDecimal(String numstring) {
   #creates an array where digits of the number as a string is inputed
   array arrayNum[numstring.length]; #check?
   
@@ -28,9 +32,11 @@ public int binartyToDecimal(String numstring) {
   
   #for loop which will calculate the sum
   for (int e; e <= arrayNum.length; e++) {
-    
+      sum += Math.power(2, arrayNum.lenght - e);
   
   }
 
-
+  #returns the answer
+  return sum;
 }
+
