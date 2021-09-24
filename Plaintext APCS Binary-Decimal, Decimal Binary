@@ -28,7 +28,11 @@ Take base-10 number 47. 47/2=23R1; 23/2=11R1; 11/2=5R1; 5/2=2R1; 2/2=1R0; 1/2=0R
 //import math for exponents
 import Mathpackage // <-- fix
 
-public int binaryToDecimal(String numstring) {
+public int binaryToDecimal(int num) {
+
+  //creates a string in which we converted our num to string using toString method
+  String numstring = Integer.toString(num);
+
   //creates an array where digits of the number as a string is inputed
   array arrayNum[numstring.length]; //check?
   
@@ -57,7 +61,7 @@ public int binaryToDecimal(String numstring) {
    Giving an integer, say 16, we can convert it into a binary number through a series of steps (see above)
 */
 
-public String decimalToBinary(int numint) {
+public int decimalToBinary(int numint) {
    
    //created variables quotient and remainder for algorithm, remainderStringBackwards is created to convert the remainder we get into actual digits
    int quotient = numint;
@@ -77,7 +81,7 @@ public String decimalToBinary(int numint) {
       
    }
    
-   return remainderString;
+   return Integer.parseInt(remainderString);
 
 }
 
