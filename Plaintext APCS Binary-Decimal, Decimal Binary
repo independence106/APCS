@@ -1,6 +1,7 @@
 Algorithm 1:(Binary to Decimal)
 
-/* Given a string with the number in binary that we desire to change into decimal. First we run a for loop in which we input the digits into the array.
+/* 
+   Given a string with the number in binary that we desire to change into decimal. First we run a for loop in which we input the digits into the array.
    In our next for loop we create a variable which is our desired conversion. In this loop we run through the array and if the digit is a "1" we add 2 to the power
    of the length - the position of item in the array. 
    
