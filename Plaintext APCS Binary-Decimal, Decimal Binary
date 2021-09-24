@@ -41,3 +41,21 @@ public int binaryToDecimal(String numstring) {
   return sum;
 }
 
+3. Algorithm 2: 
+
+/* 
+   Giving an integer, say 16, we can convert it into a binary number through a series of steps (see above)
+*/
+
+public int decimalToBinary(int numint) {
+   
+   #created variables quotient and remainder for algorithm
+   int quotient = numint;
+   int remainder;
+   
+   #created while loop to perform calculations
+   while (quotient > 0) {
+      remainder = 
+   }
+
+}
