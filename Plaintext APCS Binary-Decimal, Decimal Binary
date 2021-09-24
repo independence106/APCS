@@ -62,7 +62,6 @@ public String decimalToBinary(int numint) {
    //created variables quotient and remainder for algorithm, remainderStringBackwards is created to convert the remainder we get into actual digits
    int quotient = numint;
    int remainder;
-   int remainderStringBackwards = "";
    int remainderString = "";
    
    //created while loop to perform calculations
@@ -70,18 +69,12 @@ public String decimalToBinary(int numint) {
       remainder = quotient % 2;
       if (remainder == 1) {
          quotient = (quotient - 1) / 2;
-         remainderStringBackwards += "1";
+         remainderString = "1" + remainderString; //courtesy of Myles 
       } else {
          quotient = quotient / 2;
-         remainderStringBackwards += "0";
+         remainderString = "0" + remainderString; //courtesy of Myles 
       }
       
-   }
-
-   //created for loop to change remainderStringBackwards into the correct order; "0100" to "0010"
-   for (int i; i < remainderStringBackwards.length; i++) {
-      remainderString += remainderStringBackwards.charAt(remainderStringBackwards.length - i);
-   
    }
    
    return remainderString;
