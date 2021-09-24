@@ -1,4 +1,10 @@
-Algorithm 1:(Binary to Decimal)
+0. The "X" of base-x represents the number of possible digits in each place value. For instance, base 3 will have possible digits 0, 1, 2. Also, the digits, starting from the end, 
+are consecutive powers of X. For instance, in base 5, starting from the last digit, the place values are 5^0, 5^1, 5^2, … 
+
+1. Binary is a base-2 number system with possible digits 0 and 1. It is important in programming because  transistors in a CPU have only two states, on and off. 
+A value in binary is a sequence of 1s and 0s, and each 1 and 0 can represent an "on" or an "off," respectively.
+
+2. Algorithm 1:(Binary to Decimal)
 
 /* Given a string with the number in binary that we desire to change into decimal. First we run a for loop in which we input the digits into the array.
    In our next for loop we create a variable which is our desired conversion. In this loop we run through the array and if the digit is a "1" we add 2 to the power
@@ -28,7 +34,3 @@ public int binartyToDecimal(String numstring) {
 
 
 }
-
-asdfasdfasdfasdf
-asdfasdf
-sajhdbfjasdfasfdjh
