@@ -1,0 +1,1 @@
+I used intermediate variables to shorten my code. Hers were longer but valid.
