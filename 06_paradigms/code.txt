@@ -1,0 +1,22 @@
+Netlogo:
+
+To helloWorld 
+  print "Hello World!"
+end
+
+(In command center, type in observer: helloWorld)
+
+
+Scheme: 
+
+(display "Hello, World!")
+
+(Should display Hello, World!)
+
+
+Python:
+
+print("Hello World!")
+
+(Should display Hello World!)
+
