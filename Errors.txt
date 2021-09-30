@@ -7,3 +7,9 @@ Please make sure you have the correct access rights
 and the repository exists.
 
 Resolve: ssh to another lab pc, DNS error
+
+Error 2:
+
+(gedit:5042): Gtk-WARNING **: 14:03:59.464: cannot open display: 
+
+Resolve: Cannot open gedit on server
