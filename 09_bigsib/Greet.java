@@ -10,7 +10,7 @@ public class Greet extends BigSib {
                 greeterInput(name);
 		*/
 
-                BigSib.greeterPersonalized("E");
+                BigSib.greeterInput("E");
         }
         
 }
