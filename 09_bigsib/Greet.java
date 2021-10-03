@@ -1,5 +1,9 @@
-// Dunking Ducks(Humans: Daniel, Jason, Julia; Ducks: Tiggy, Ralph, null)
-
+/* 
+   Dunking Ducks(Humans: Daniel, Jason, Julia; Ducks: Tiggy, Ralph, null)
+   
+   Discoveries: n/a
+   Unresolved Questions: .class file where to put
+*/
 public class Greet {
         public static void main(String[] args) {
 
