@@ -4,6 +4,10 @@ public class Greet {
                 BigSib.greeterInput("Dunkin \n");
 		BigSib.greeterInput("Ducks \n");
 		BigSib.greeterInput("are OP! \n");
+
+                //stuff:
+                BigSib Jason = new BigSib("Jason");
+                Jason.getName();
         }
         
 }
