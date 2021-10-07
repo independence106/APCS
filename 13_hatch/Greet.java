@@ -1,5 +1,5 @@
 /* 
-   Jason Zhou
+   Jason Zhou [Emily, Applesauce, Tiggy]
    APCS
    HW13: Where do BigSibs Come From? (Edit BigSib w/ a Constructor)
    2021-10-06
