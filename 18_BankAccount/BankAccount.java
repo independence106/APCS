@@ -25,7 +25,7 @@ public class BankAccount {
     public void getInfo(String pss, String pin) {
     //.equals/compareTo
         if (pss == accPss && pin == accPin) {
-            System.out.println("Name: " + accName + "\nAccount Id: " + accId + "\nBalance: " + balance);
+            System.out.println("Name: " + accName + "\nAccount Id: " + accId + "\nBalance: " + balance + "\n");
         } else {
             System.out.println("Access Denied/Account Doesn't Exist");
         }
@@ -38,7 +38,7 @@ public class BankAccount {
 
     public void changePin(String oldPin, String newPin) {
     //add superuser
-        if (oldPin == accPin) {
+        if (oldPin == accPin && newPin.length() == 4) {
             accPin = newPin;
         } else {
             System.out.println("Wrong Pin");
@@ -78,6 +78,19 @@ public class BankAccount {
         }
     }
     public static void main(String[] args) {
+        BankAccount elmo = new BankAccount("elmo", "e", "101101101", "1011", 69);
+        elmo.getInfo("e", "1011");
+        elmo.changePin("1011", "1111");
+        elmo.getInfo("e", "1111");
+        elmo.changeName("elmoson", "e");
+        elmo.getInfo("e", "1111");
+        elmo.changePsswrd("e", "ee", "ee");
+        elmo.getInfo("ee", "1111");
+        elmo.deposit("1111", 69);
+        elmo.getInfo("ee", "1111");
+        elmo.withdraw("1111", 20);
+        elmo.getInfo("ee", "1111");
+        //correct outputs will have no errors
     }
 
 }
