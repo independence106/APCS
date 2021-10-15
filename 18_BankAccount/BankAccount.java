@@ -1,3 +1,15 @@
+/*
+Jason Zhou (Roster: Nina, John Duckies: Miss Alpaca, Tiggy, )
+APCS
+HW18: CPA-One (Codified BankAccount.java)
+2021/10/14
+
+DISCO: N/A
+Q: Is there a possible superclass?
+
+*/
+
+
 public class BankAccount {
     //vars
     private double balance;
