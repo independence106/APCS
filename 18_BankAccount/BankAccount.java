@@ -5,7 +5,18 @@ HW18: CPA-One (Codified BankAccount.java)
 2021/10/14
 
 DISCO: N/A
-Q: Is there a possible superclass?
+Q: N/A
+Q2: Constructors are used whenever you create an instance of an object. 
+    Hence, it Java did not create a constructor for you, BigSib.java
+    would not work. 
+    
+Q3: An easy test that we can do is create an instance of a class, say 
+    BankAccount and run instanceOfBankAccount.toString(); This will
+    return ClassName@hashcode. This isn't really useful besides for
+    debugging and other things. The superclass to all classes is object 
+    class. Class Object has a method toString() which converts an object
+    into a string. Since every class is a subclass of Object, we can
+    do @Override and override the method in our subclass.
 
 */
 
@@ -32,7 +43,7 @@ public class BankAccount {
         //Randomize?
         accId = id;
     }
-
+    
     //methods
     public void getInfo(String pss, String pin) {
     //.equals/compareTo
@@ -102,6 +113,7 @@ public class BankAccount {
         elmo.getInfo("ee", "1111");
         elmo.withdraw("1111", 20);
         elmo.getInfo("ee", "1111");
+        System.out.println(elmo.toString());
         //correct outputs will have no errors
     }
 
