@@ -15,14 +15,9 @@ public class BankAccount {
 
     //constructor
     public BankAccount() {
-        System.out.println("Set your account name: ");
-        accName = scan.nextLine();
-        System.out.println("Set your account password: ");
-        accPss = scan.nextLine();
-        System.out.println("Set your pin: ");
-        accPin = scan.nextLine();
-        System.out.println("Set your balance: ");
-        balance = Double.parseDouble(scan.nextLine());
+        //intialize method?? - yeah make a method...
+        initialize();
+        
     }
     //overloaded constructor
     public BankAccount(String name, String pss, String id, String pinnum, double setBalance) {
@@ -36,6 +31,26 @@ public class BankAccount {
     }
 
     //methods
+    public void initialize() {
+        System.out.println("Set your account name: ");
+        accName = scan.nextLine();
+        System.out.println("Set your account password: ");
+        accPss = scan.nextLine();
+        System.out.println("Set your pin: ");
+        accPin = scan.nextLine();
+        System.out.println("Set your balance: ");
+        
+        //fix below
+        do {
+            try {
+                balance = Double.parseDouble(scan.nextLine());
+                break;
+            } catch(Exception balance) {
+                System.out.println(balance + " is not a number! Try Again!");
+            }
+            
+        } while(true);
+    }
     public String getInfo(String pss, String pin) {
     //.equals/compareTo
         if (pss == accPss && pin == accPin) {
@@ -100,6 +115,8 @@ public class BankAccount {
         return overdraftFee;
     }
     public static void main(String[] args) {
+        BankAccount richard = new BankAccount();
+        
     }
 
 }
