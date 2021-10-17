@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//not done lol
+
 public class BankAccount {
     //vars
     Scanner scan = new Scanner(System.in);
@@ -37,11 +39,21 @@ public class BankAccount {
         System.out.println("Set your account password: ");
         accPss = scan.nextLine();
         System.out.println("Set your pin: ");
-        accPin = scan.nextLine();
+        accPin = scan.nextInt();
+        while (true) {
+            if (accPin.toString().length() != 4) {
+                System.out.println("Length Not 4!");
+                accPin = scan.nextInt();
+            } else {
+                break;
+            }
+        }
+        
+
         System.out.println("Set your balance: ");
         
         //fix below
-        do {
+        while(true) {
             try {
                 balance = Double.parseDouble(scan.nextLine());
                 break;
@@ -49,7 +61,7 @@ public class BankAccount {
                 System.out.println(balance + " is not a number! Try Again!");
             }
             
-        } while(true);
+        }
     }
     public String getInfo(String pss, String pin) {
     //.equals/compareTo
@@ -58,6 +70,9 @@ public class BankAccount {
         } else {
             return "Access Denied/Account Doesn't Exist";
         }
+    }
+    public void getInfo() {
+        System.out.print(accPin);
     }
     /*
     public String getInfo(String name, String pss, String pin) {
@@ -116,6 +131,7 @@ public class BankAccount {
     }
     public static void main(String[] args) {
         BankAccount richard = new BankAccount();
+        richard.getInfo();
         
     }
 
