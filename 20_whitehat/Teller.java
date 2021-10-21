@@ -6,7 +6,8 @@ HW20: External Audit (Review Classmate BankAccounts)
 
 DISCO: I guess really goes here to answer the question. 
        Operations that are possible from BankAccount but
-       not teller 
+       not teller include changing values for variables as
+       well as printing out their values.
 Q: N/A
 */
 
@@ -38,6 +39,7 @@ public class Teller {
         System.out.println(elmo.toString());
 		
 		//all seems to work
+        
 		
 	}
 }
