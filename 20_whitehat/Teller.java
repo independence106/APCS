@@ -1,5 +1,5 @@
 /*
-Jason Zhou (Roster: Nina, John Duckies: Miss Alpaca, Tiggy, Po)
+Jason Zhou (Roster: Nina Jiang, John Gupta-she Duckies: Miss Alpaca, Tiggy, Po)
 APCS
 HW20: External Audit (Review Classmate BankAccounts)
 2021/10/19
@@ -35,11 +35,15 @@ public class Teller {
 		System.out.println(elmo.withdraw(100));
 		System.out.println(elmo.withdraw(-100));
 		
-        System.out.println(elmo.authenticate(9999, "ljasieo"));
-        System.out.println(elmo.toString());
-		
+        	System.out.println(elmo.authenticate(9999, "ljasieo"));
+        	System.out.println(elmo.toString());
 		//all seems to work
         
+		
+		//!!!!!! CREDIT GOES TO @NAKIB ABEDIN FOR THIS:
+		System.out.println(elmo.deposit(01000));
+		System.out.println(elmo.toString());
+		//01000 is in base 8 thus cool stuff happens 
 		
 	}
 }
