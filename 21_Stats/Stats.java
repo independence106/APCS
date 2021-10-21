@@ -1,3 +1,12 @@
+/*
+Jason Zhou (Roster: Nina Jiang, John Gupta-she Duckies: Miss Alpaca, Tiggy, Po)
+APCS
+HW21: STAtisTically Speaking... (Wrote Stats.java)
+2021/10/20
+
+DISCO: N/A
+Q: Is parsing allowed
+*/
 public class Stats {
 
 	public static int mean(int a, int b) {
@@ -68,7 +77,6 @@ public class Stats {
 	public static double geoMean(double a, double b, double c) {
         return Math.pow((a*b*c), 1/3);
 	}
-
 
 	//main method for testing functionality
 	public static void main( String[] args ) {
