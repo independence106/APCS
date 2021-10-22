@@ -113,7 +113,7 @@ public class BankAccount {
         elmo.getInfo("ee", "1111");
         elmo.withdraw("1111", 20);
         elmo.getInfo("ee", "1111");
-        System.out.println(elmo.toString());
+        System.out.println(elmo);
         //correct outputs will have no errors
     }
 
