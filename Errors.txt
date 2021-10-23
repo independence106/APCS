@@ -13,3 +13,9 @@ Error 2:
 (gedit:5042): Gtk-WARNING **: 14:03:59.464: cannot open display: 
 
 Resolve: Cannot open gedit on server
+
+Error 3: (not really an error)
+
+.java is not on the classpath of project xxxxx, only syntax errors are reported
+
+Resolve: right click on file and add it to source path
