@@ -14,8 +14,8 @@ public class Coin {
     //attributes aka instance vars
     private double value;
     private double bias = 0.5;
-	  private String upFace = "Heads";
-	  private String name;
+    private String upFace = "Heads";
+    private String name;
     private int flipCtr, headsCtr, tailsCtr;
 
     
