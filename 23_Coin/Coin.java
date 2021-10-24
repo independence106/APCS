@@ -1,7 +1,12 @@
 /***
- *  class Coin
- *  by Clyde "Thluffy" Sinclair
- *  SKELETON
+ * Jason Zhou (Dunking Ducks: Roster: Jason Zhou, Daniel Jung, Tiggy, Ralph)
+ * APCS
+ * HW23: What Does Equality Look Like? (Created Coin.java)
+ * 2021 - 10 - 24
+ * Time spent: In class time + 10 minutes outside class
+ * 
+ * Disco: N/A
+ * QCC: N/A
  ***/
 
 public class Coin {
@@ -167,12 +172,6 @@ public class Coin {
      ***/
     public String toString() {
         return name + " -- " + upFace;
-    }
-    public static void main(String[] args) {
-        Coin c = new Coin("penny", "heads");
-        Coin d = new Coin("nickel", "tails");
-        System.out.println(d.equals(c));  
-        
-    }
+    }          
 
 }//end class
