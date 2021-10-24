@@ -7,11 +7,11 @@
 public class Coin {
 
     //attributes aka instance vars
-    double value;
-    double bias = 0.5;
-	  String upFace = "Heads";
-	  String name;
-    int flipCtr, headsCtr, tailsCtr;
+    private double value;
+    private double bias = 0.5;
+	  private String upFace = "Heads";
+	  private String name;
+    private int flipCtr, headsCtr, tailsCtr;
 
     
 
@@ -135,17 +135,17 @@ public class Coin {
      * Returns "heads" or "tails"
      ***/
     public String flip() {
-    if (Math.random() >= bias) {
-      flipCtr++;
-      headsCtr++;
-      upFace = "Heads";
-      return upFace;
-    } else {
-      flipCtr++;
-      tailsCtr++;
-      upFace = "Tails";
-      return upFace;
-    }
+        if (Math.random() <= bias) {
+            flipCtr++;
+            headsCtr++;
+            upFace = "Heads";
+            return upFace;
+        } else {
+            flipCtr++;
+            tailsCtr++;
+            upFace = "Tails";
+            return upFace;
+        }
     }	
 
 
@@ -156,7 +156,7 @@ public class Coin {
      * or both showing tails. False otherwise.
      ***/
     public boolean equals( Coin other ) {
-    return (this.upFace.equals(other));
+        return (this.upFace.equals(other.getUpFace()));
     }
 
 
@@ -166,10 +166,12 @@ public class Coin {
      * postcond: Return String comprised of name and current face
      ***/
     public String toString() {
-    return name + " -- " + upFace;
+        return name + " -- " + upFace;
     }
     public static void main(String[] args) {
-        
+        Coin c = new Coin("penny", "heads");
+        Coin d = new Coin("nickel", "tails");
+        System.out.println(d.equals(c));  
         
     }
 

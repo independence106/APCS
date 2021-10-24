@@ -48,6 +48,7 @@ public class Stats {
             lowbound++;
         }
         return ans;
+		
 	}
 
 	public static double geoMean(double a, double b) {
@@ -73,7 +74,7 @@ public class Stats {
         }
         return ans;
 	}
-
+	
 	public static double geoMean(double a, double b, double c) {
         return Math.pow((a*b*c), 1/3);
 	}
