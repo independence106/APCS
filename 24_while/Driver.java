@@ -55,10 +55,10 @@ public class Driver {
       //y matches
       e.reset("penny", 0.5);
       int z = 21;
-      /*while (e.getFlipCtr() < y && e.getUpFace().equals(y.getUpFace())) {
+      while (e.getFlipCtr() < z && e.getUpFace().equals(y.getUpFace())) {
           e.flip();
       }
-      */
+      
       System.out.println("Flip Counter: " + e.getFlipCtr() + "\n");
       System.out.println("Heads Flip Counter: " + e.getHeadsCtr() + "\n");
       System.out.println("Tails Flip Counter: " + e.getTailsCtr() + "\n\n");
