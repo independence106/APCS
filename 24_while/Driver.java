@@ -41,35 +41,44 @@ public class Driver {
         }
   */
       Coin e = new Coin();
+      Coin y = new Coin();
       //x heads
       int x = 21;
-      while (e.getHeadsCtr() < x) { 
+      while (e.getHeadsCtr() + y.getHeadsCtr() < x) { 
           e.flip();
+          y.flip();
       }
-      System.out.println("Flip Counter: " + e.getFlipCtr() + "\n");
-      System.out.println("Heads Flip Counter: " + e.getHeadsCtr() + "\n");
-      System.out.println("Tails Flip Counter: " + e.getTailsCtr() + "\n\n");
+      System.out.println("Flip Counter: " + e.getFlipCtr() + y.getHeadsCtr() + "\n");
+      System.out.println("Heads Flip Counter: " + e.getHeadsCtr() + y.getHeadsCtr() + "\n");
+      System.out.println("Tails Flip Counter: " + e.getTailsCtr() + y.getHeadsCtr() + "\n\n");
       
       //y matches
       e.reset("penny", 0.5);
-      int y = 21;
-      while (e.getFlipCtr() < y) {
+      int z = 21;
+      /*while (e.getFlipCtr() < y && e.getUpFace().equals(y.getUpFace())) {
           e.flip();
       }
+      */
       System.out.println("Flip Counter: " + e.getFlipCtr() + "\n");
       System.out.println("Heads Flip Counter: " + e.getHeadsCtr() + "\n");
       System.out.println("Tails Flip Counter: " + e.getTailsCtr() + "\n\n");
        
       e.reset("penny", 0.5);
-    e.flip();
+    	//e.flip();
+    	
+    	int matchCtr = 0;
+    	while (matchCtr < 65536 || matchCtr % 2005 != 0) {
+    		e.flip();
+    		y.flip();
+    		if (e.getUpFace().equals(y.getUpFace())) { matchCtr++; }
+    	}
     
-      while ((e.getFlipCtr() < 65535) || ((e.getFlipCtr() % 2005) != 0)) {
-        e.flip();
-        System.out.println(e.getFlipCtr());
-    }
+
+      
       System.out.println("Flip Counter: " + e.getFlipCtr() + "\n");
       System.out.println("Heads Flip Counter: " + e.getHeadsCtr() + "\n");
       System.out.println("Tails Flip Counter: " + e.getTailsCtr() + "\n\n");
+      System.out.println(matchCtr);
       
       
     }//end main()
