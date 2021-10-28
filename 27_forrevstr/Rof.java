@@ -1,5 +1,5 @@
 /* 
-  Jason Zhou, Justin Mobahir, Joshua Yagupsky (Team Jumping Jackals)
+  Jason Zhou, Justin Mobahir, Joshua Yagupsky (Team Jumping Jackals) Duckies: Tiggy, Alfred, 
    APCS
    HW27: FOR the Love of Strings
    2021-28-20
