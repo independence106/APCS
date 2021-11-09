@@ -1,6 +1,9 @@
 /***
  * The Tator Tots (Humans: Daniel, Justin, Ari; Ducks: Ralph, Alfred)
  * APCS
+/***
+ * Dunking Ducks (Humans: Daniel, Jason, Russell; Ducks: Ralph, Tiggy)
+ * APCS
  * HW31 -- Otnay Ybay ethay Airhay Onway Ymay Inneechay Inchay Inchay
  * 2021-11-09
  * QCC:
@@ -154,17 +157,7 @@ public class Pig
   }
 
 
-  public static void main( String[] args ) {
-
-    for( String word : args ) {
-      System.out.println( "allVowels \t" + allVowels(word) );
-      System.out.println( "firstVowels \t" + firstVowel(word) );
-      System.out.println( "countVowels \t" + countVowels(word) );
-      System.out.println( "engToPig \t" + engToPig(word) );
-      System.out.println( "---------------------" );
-    }
-
-  }//end main()
+  
 
     private static final String CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String PUNCS = ".,:;!?";
@@ -188,23 +181,18 @@ public class Pig
             isUpperCase("A") -> true
       =====================================*/
     public static boolean isUpperCase( String letter ) {
-      return CAPS.indexOf( letter ) != -1;
+      
     }
 
 
     /*=====================================
       boolean hasPunc(String) -- tells whether a String contains punctuation
       pre:  w != null
-      post: hasPunc(“cat.”) -> true
-            hasPunc(“cat”) -> false
+      post: hasPunc("cat.") -> true
+            hasPunc("cat") -> false
       =====================================*/
     public static boolean hasPunc( String w ) {
-      for (int i=0; i<w.length();i++){
-        if (isPunc(w.substring(i,i+1))){
-          return true;
-  		  }
-      }
-      return false;
+      
     }
 
 
@@ -215,7 +203,7 @@ public class Pig
             beginsWithUpper("apple") -> false
       =====================================*/
     public static boolean beginsWithUpper( String w ) {
-      return isUpperCase(w.substring(0,1) );
+      
     }
 
 /*
@@ -229,5 +217,9 @@ public class Pig
     System.out.println(beginsWithUpper("Apple")); // -> true
     System.out.println(beginsWithUpper("apple")); // -> false
   }
+  
 */
+  public static void main(String[] args) {
+    System.out.println(hasPunc("ee?ee"));
+  }
 }//end class Pig
