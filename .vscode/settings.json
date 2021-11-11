@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
         "cb/string-1",
+        "cb",
         "23_Coin",
         "21_Stats",
-        "cb"
+        "hw33"
     ]
 }

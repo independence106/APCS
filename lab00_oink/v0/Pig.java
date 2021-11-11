@@ -2,21 +2,8 @@
  * The Tator Tots (Humans: Daniel, Justin, Ari; Ducks: Ralph, Alfred)
  * APCS
 /***
- * Dunking Ducks (Humans: Daniel, Jason, Russell; Ducks: Ralph, Tiggy)
- * APCS
- * HW31 -- Otnay Ybay ethay Airhay Onway Ymay Inneechay Inchay Inchay
- * 2021-11-09
- * QCC:
-
- * Disco:
-
- * PRIORITIES:
- - Regular words: pog, pizza
- - Words with vowel as first letter: apple, attack
- - Words that start wwith more than one consonant: string, chug
- - Words with y: my, physics, yell
- - Words with capital letters: Hello, They
- ***/
+ * V0: copied over
+ */
 
 public class Pig
 {
