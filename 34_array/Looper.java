@@ -20,7 +20,7 @@ public class Looper {
     return -1;
   }
   public static int linSearchR(int[] a, int target) {
-    
+
   }
   public static void main(String[] args) {
       int[] array = new int[5];
