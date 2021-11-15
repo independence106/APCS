@@ -9,6 +9,10 @@
 
 QCC: 
 DISCO: Recursion is more annoying to do in these cases, Array.copyOfRange
+       Vansh - I feel as though the linSearchR method could have been made
+       easier to interpret and implement had there been three parameters 
+       (an index parameter to keep track) - would we be allowed to add 
+       more parameters
 */
 
 import java.util.Arrays;
