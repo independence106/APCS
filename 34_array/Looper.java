@@ -1,6 +1,6 @@
 /* 
    Silly Serpants
-   Humans: Jason Zhou, Vansh Sabo; Duckies: Tiggy, Tiffany
+   Humans: Jason Zhou, Vansh Saboo; Duckies: Tiggy, Tiffany
    APCS
    HW34: A Pirate's Life for Me (Arrays - finding freq and index)
    2021-14-11
