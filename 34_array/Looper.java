@@ -96,7 +96,7 @@ public class Looper {
       }
       */
       System.out.println(arrayToString(copy(array, 0, 5))); // 9, 9, 6, 7, 8, 9
-      System.out.println(arrayToString(Arrays.copyOfRange(array, 0, array.length - 1))); // 9, 9, 6, 7, 8, 9
+     
       System.out.println(linSearchR(array, 9)); // 0 
       System.out.println(linSearchR(array2, 9)); // -1
       System.out.println(linSearchR(array3, 9)); // -1
