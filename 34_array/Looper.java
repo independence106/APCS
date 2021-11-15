@@ -80,13 +80,9 @@ public class Looper {
   }
   
   public static int freqRec(int[] a, int target) {
-    if (a.length == 0) {
-      return 0;
-    } else if (a[0] == target) {
-      return 1 + freqRec(Arrays.copyOfRange(a, 1, a.length), target);
-    } else {
-      return freqRec(Arrays.copyOfRange(a, 1, a.length), target);
-    }
+    if(a.length == 0){return 0;}
+	    if(a[0] == target){return 1 + freqRec(copier(a), target);}
+	    return freqRec(copier(a), target);
   }
   public static void main(String[] args) {
       
@@ -114,8 +110,7 @@ public class Looper {
       System.out.println(freq(array, 9)); // 5
 
       int[] scores = new int[5];
-      System.out.println(stringify(generator(scores)));
-      
+     
       System.out.println();
       int[] values = {5, 5, 10, 9, 7};
       System.out.println(linSearch(values, 8));
