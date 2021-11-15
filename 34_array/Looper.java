@@ -128,7 +128,8 @@ public class Looper {
       System.out.println(freqRec(values, 10));
       System.out.println(freq(values, 1029));
       System.out.println(freqRec(values, 1029));
-  }
+      //ignore this plz
+    }
   
 
 }
