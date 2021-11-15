@@ -7,8 +7,8 @@
    time spent: 0.3 hours
 
 
-QCC: Array.copyOfRange
-DISCO: Recursion is more annoying to do in these cases
+QCC: 
+DISCO: Recursion is more annoying to do in these cases, Array.copyOfRange
 */
 
 import java.util.Arrays;
