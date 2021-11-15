@@ -1,22 +1,17 @@
 /***
- * Jason Zhou (Dunking Ducks: Roster: Jason Zhou, Daniel Jung, Tiggy, Ralph)
- * APCS
- * HW23: What Does Equality Look Like? (Created Coin.java)
- * 2021 - 10 - 24
- * Time spent: In class time + 10 minutes outside class
- * 
- * Disco: N/A
- * QCC: N/A
+ *  class Coin
+ *  by Clyde "Thluffy" Sinclair
+ *  SKELETON
  ***/
 
 public class Coin {
 
     //attributes aka instance vars
-    private double value;
-    private double bias = 0.5;
-    private String upFace = "Heads";
-    private String name;
-    private int flipCtr, headsCtr, tailsCtr;
+    double value;
+    double bias = 0.5;
+	  String upFace = "Heads";
+	  String name;
+    int flipCtr, headsCtr, tailsCtr;
 
     
 
@@ -140,17 +135,17 @@ public class Coin {
      * Returns "heads" or "tails"
      ***/
     public String flip() {
-        if (Math.random() <= bias) {
-            flipCtr++;
-            headsCtr++;
-            upFace = "Heads";
-            return upFace;
-        } else {
-            flipCtr++;
-            tailsCtr++;
-            upFace = "Tails";
-            return upFace;
-        }
+    if (Math.random() >= bias) {
+      flipCtr++;
+      headsCtr++;
+      upFace = "Heads";
+      return upFace;
+    } else {
+      flipCtr++;
+      tailsCtr++;
+      upFace = "Tails";
+      return upFace;
+    }
     }	
 
 
@@ -161,7 +156,7 @@ public class Coin {
      * or both showing tails. False otherwise.
      ***/
     public boolean equals( Coin other ) {
-        return (this.upFace.equals(other.getUpFace()));
+    return (this.upFace.equals(other));
     }
 
 
@@ -171,7 +166,11 @@ public class Coin {
      * postcond: Return String comprised of name and current face
      ***/
     public String toString() {
-        return name + " -- " + upFace;
-    }          
+    return name + " -- " + upFace;
+    }
+    public static void main(String[] args) {
+        
+        
+    }
 
 }//end class
