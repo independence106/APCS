@@ -112,6 +112,22 @@ public class Looper {
       System.out.println(freqRec(array, 9)); // 5
       System.out.println(freqRec(array, 21)); // 0
       System.out.println(freq(array, 9)); // 5
+
+      int[] scores = new int[5];
+      System.out.println(stringify(generator(scores)));
+      
+      System.out.println();
+      int[] values = {5, 5, 10, 9, 7};
+      System.out.println(linSearch(values, 8));
+      System.out.println(linSearch(values, 5));
+      System.out.println(linSearchR(values, 8));
+      System.out.println(linSearchR(values, 9));
+      
+      System.out.println();
+      System.out.println(freq(values, 10));
+      System.out.println(freqRec(values, 10));
+      System.out.println(freq(values, 1029));
+      System.out.println(freqRec(values, 1029));
   }
   
 
