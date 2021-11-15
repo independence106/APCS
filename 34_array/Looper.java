@@ -40,7 +40,7 @@ public class Looper {
   //current values from -100 to 100
   public static void populateArrayWithRandom(int[] array) {
     for (int i = 0; i < array.length; i++) {
-      array[i] = (Math.random() < 0.5) ? (int) (Math.random() * 100) : (int) (Math.random() * 100 * -1);
+      array[i] = (Math.random() < 0.5) ? (int) (Math.random() * Math.pow(2, 31)) : (int) (Math.random() * Math.pow(2, 31) * -1);
     }
   }
   
