@@ -1,4 +1,11 @@
-
+/***
+ * Jason Zhou, Daniel Jung, Russell Goychayev (Team Dunkin' Ducks) Duckies: Tiggy, Ralph, 
+ * APCS
+ * HW33: Retrench, Regroup
+ * 2021-11-11
+ * time spent: 1.25 hrs
+ */
+ 
 public class Test {
     public static void q10() {
         int s, w, t, h;
