@@ -1,11 +1,12 @@
 /*****************************************************
- * Clyde "Thluffy" Sinclair
- * APCS pd00
+ * Silly Serpants
+ * Vansh Saboo, Jason Zhou: Duckies: Tiggy, 
+ * APCS pd08
  * HW38 -- Shmoney
  * 2021-11-18
- *
- * class Slots
- * skeleton
+ - Working with arrays
+ - DISCO: Vansh - Math.random is [0, 1) - I intially thought it was 1], which affected the swap code
+          Jason - Agree with above
  *****************************************************/
 
 public class Slots {
@@ -15,14 +16,12 @@ public class Slots {
     "lime", "lime", "lime",
     "lemon", "lemon", "lemon",
     "cherry", "cherry", "cherry",
-    /*
-      add extra fruits until your heart is content...
-      Some suggestions:
+    
     "orange", "orange", "orange",
     "grapefruit", "grapefruit", "grapefruit",
     "tangerine", "tangerine", "tangerine",
     "ugli", "ugli", "ugli",
-    */
+    
     "peach", "peach", "peach"
   };
 
@@ -80,8 +79,8 @@ public class Slots {
     // A simple approach to shuffling:
     // iterate through the array, swapping
     // the val at each index with a randomly chosen other index
-    for(int i = 0; i < _fruits.length - 1; i++) {
-      swap(i, (int) (Math.random() * _fruits.length - 1));
+    for(int i = 0; i < _fruits.length; i++) {
+      swap(i, (int) (Math.random() * _fruits.length));
     }
   }
 
@@ -110,24 +109,24 @@ public class Slots {
     or if first 3 slots mutually distinct,
     false otherwise
     =====================================*/
-    /*
+    
   public boolean miniWin()
   {
-    boolean retBoo = ?
+    boolean retBoo = false;
+    retBoo = jackpot() || (!_fruits[0].equals(_fruits[1]) && !_fruits[1].equals(_fruits[2]) && !_fruits[2].equals(_fruits[0]));
 
 
     return retBoo;
   }
-*/
+
 
   //main() method for testing
   public static void main( String[] args ) {
-    Slots richard = new Slots();
-    richard.spinOnce();
-    System.out.println(richard.toString());
+    
+    
     //usage: move bar below down 1 line at a time to test functionality...
 
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
     Slots machine01 = new Slots();
     Slots machine02 = new Slots();
 
@@ -177,7 +176,7 @@ public class Slots {
     System.out.println( "====================================" );
     System.out.println( "Your spin..." + "\t" + machine01 );
     System.out.println( "JACKPOT!\n" );
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    
   }//end main
 
 }//end class Slots
