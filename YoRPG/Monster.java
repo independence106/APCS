@@ -37,12 +37,15 @@ public class Monster {
       int amplifier = (int) (Math.random() * 10);
       if (amplifier > 5) {
         damage += amplifier;
+        System.out.println(this.health);
       } else {
         System.out.println("Youg swung too hard, and bashed thy skull");
         takeDamage(5);
+        System.out.println(this.health);
       }
     } else {
       damage = 15;
+      System.out.println(this.health);
     }
     name.takeDamage(damage);
 

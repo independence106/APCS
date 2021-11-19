@@ -42,13 +42,16 @@ public class Protagonist {
       int amplifier = (int) (Math.random() * 10);
       if (amplifier > 2) {
         damage = 15 + amplifier;
+        System.out.println(this.health);
       } else {
         System.out.println("Youg swung too hard, and bashed thy skull");
+        System.out.println(this.health);
         damage = 0;
         takeDamage(5);
       }
     } else {
       damage = 15;
+      System.out.println(this.health);
     }
     name.takeDamage(damage);
 
