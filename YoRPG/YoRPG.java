@@ -145,6 +145,11 @@ public class YoRPG {
 	    //option 2: you slay the beast
 	    else if ( !smaug.isAlive() ) {
         System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+        System.out.println( "You hath gained 10 XP and climbed one level" +
+                            "\t1: Gain 10 health.\n\t2: Gain 10 damage.");
+        e = Integer.parseInt(in.readLine());
+        
+
         return true;
 	    }
 	    //option 3: the beast slays you
@@ -177,7 +182,7 @@ public class YoRPG {
     }
 
     System.out.println( "Thy game doth be over." );
-	  
+
   }//end main
 
 }//end class YoRPG

@@ -36,6 +36,11 @@ public class Protagonist {
   public void takeDamage(int damage) {
     this.health -= damage;
   }
+  public void increaseLevel(int health, int damage) {
+    this.health += health;
+    this.damage += damage;
+    this.level++;
+  }
   public int attack(Monster name) {
     if (attackState.equals("specialize")) {
       //System.out.println("Swinging Hammer...");
