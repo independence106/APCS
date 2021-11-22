@@ -20,6 +20,9 @@ public class Monster {
   public String getName() {
     return this.monsterName;
   }
+  public int getHealth() {
+    return this.health;
+  }
 
   public String toString() {
     return "Name: " + getName() + "\nLevel: " + this.level + "\nHealth: " + this.health + "\nAttack State" + this.attackState;
@@ -37,15 +40,15 @@ public class Monster {
       int amplifier = (int) (Math.random() * 10);
       if (amplifier > 5) {
         damage += amplifier;
-        System.out.println(this.health);
+       
       } else {
         System.out.println("Youg swung too hard, and bashed thy skull");
         takeDamage(5);
-        System.out.println(this.health);
+        
       }
     } else {
       damage = 5;
-      System.out.println(this.health);
+      
     }
     name.takeDamage(damage);
 

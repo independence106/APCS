@@ -146,11 +146,15 @@ public class YoRPG {
         d1 = pat.attack( smaug );
         d2 = smaug.attack( pat );
 
+        //added some stuff here (health bar indicators)
         System.out.println( "\n" + pat.getName() + " dealt " + d1 +
                             " points of damage.");
-
-        System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
-                            " for " + d2 + " points of damage.");
+        if (smaug.isAlive())
+          System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+                              " for " + d2 + " points of damage.\n\n\t" + pat.getName()
+                              + " Health: " + pat.getHealth() + "\n\t" + "Monster Health: " +
+                              smaug.getHealth());
+        
 	    }//end while
 
 	    //option 1: you & the monster perish
@@ -163,11 +167,11 @@ public class YoRPG {
 	    }
 	    //option 2: you slay the beast
 	    else if ( !smaug.isAlive() ) {
-        System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+        System.out.println( "\nHuzzaaH! Ye olde monster hath been slain!" );
 
         // added things
-        System.out.println( "You hath gained 10 XP and climbed one level" +
-                            "\t1: Gain 10 health.\n\t2: Gain 10 damage.");
+        System.out.println( "\nYou hath gained 10 XP and climbed one level" +
+                            "\n\t1: Gain 10 health.\n\t2: Gain 10 damage.");
         try {
           f = Integer.parseInt(in.readLine());
         } catch (IOException z) {
@@ -178,7 +182,10 @@ public class YoRPG {
         } else {
           pat.increaseLevel(0, 10);
         }
+        System.out.println("\nWell done hero! You has slain a monster! Health hath been reset!");
+        pat.resetHealth();
         return true;
+        
 	    }
 	    //option 3: the beast slays you
 	    else if ( !pat.isAlive() ) {

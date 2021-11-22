@@ -1,6 +1,7 @@
-public class Protagonist {
+public class Protagonist extends Being {
 
   private int health;
+  private int maxHealth;
   private int damage;
   private String attackState = "";
   private String protagonistName = "";
@@ -8,17 +9,17 @@ public class Protagonist {
 
 
   public Protagonist() {
-    this.health = 100;
-    this.damage = 15;
-    this.level = 0;
-    this.attackState = "normalize";
+    super();
   }
   public Protagonist(String name) {
-    this();
-    this.protagonistName = name;
+    super(name);
+    
   }
   public String getName() {
     return this.protagonistName;
+  }
+  public int getHealth() {
+    return this.health;
   }
 
   public String toString() {
@@ -37,9 +38,12 @@ public class Protagonist {
     this.health -= damage;
   }
   public void increaseLevel(int health, int damage) {
-    this.health += health;
+    this.maxHealth += health;
     this.damage += damage;
     this.level++;
+  }
+  public void resetHealth() {
+    this.health = maxHealth;
   }
   public int attack(Monster name) {
     if (attackState.equals("specialize")) {
@@ -47,10 +51,9 @@ public class Protagonist {
       int amplifier = (int) (Math.random() * 10);
       if (amplifier > 2) {
         damage = 15 + amplifier;
-        System.out.println(this.health);
+        
       } else {
-        System.out.println("Youg swung too hard, and bashed thy skull");
-        System.out.println(this.health);
+        System.out.println("\nYoug swung too hard, and bashed thy skull! Dizzyness has caused you to forfeit 5 health!");
         damage = 0;
         takeDamage(5);
       }
