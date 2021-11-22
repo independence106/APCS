@@ -19,6 +19,9 @@
 import java.io.*;
 import java.util.*;
 
+import javax.sound.midi.SysexMessage;
+
+
 public class YoRPG {
 
   // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
@@ -71,18 +74,30 @@ public class YoRPG {
     s += "Selection: ";
     System.out.print( s );
 
-    try {
-	    difficulty = Integer.parseInt( in.readLine() );
+    while(true) {
+      try {
+        difficulty = Integer.parseInt( in.readLine() );
+        if (difficulty > 3) {
+          throw new IOException("Thee hath picked no difficulty! Try Again");
+        }
+        break;
+      }
+      catch ( Exception e) { 
+        System.out.println("Thee hath picked no difficulty! Try Again");
+      }
     }
-    catch ( IOException e ) { }
 
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
-
-    try {
-	    name = in.readLine();
+    while(true) {
+      try {
+        name = in.readLine();
+        break;
+      }
+      catch ( IOException e ) {
+        System.out.println("Thee has a name, hath not?");
+      }
     }
-    catch ( IOException e ) { }
 
     //instantiate the player's character
     pat = new Protagonist( name );
@@ -98,6 +113,7 @@ public class YoRPG {
     =============================================*/
   public boolean playTurn() {
     int i = 1;
+    int f = 1;
     int d1, d2;
 
     if ( Math.random() >= ( difficulty / 3.0 ) )
@@ -117,7 +133,10 @@ public class YoRPG {
           System.out.println( "\t1: Nay.\n\t2: Aye!" );
           i = Integer.parseInt( in.readLine() );
         }
-        catch ( IOException e ) { }
+        catch ( IOException e ) {
+          System.out.println("Thee hath picked no number!");
+        }
+
 
         if ( i == 2 )
           pat.specialize();
@@ -145,11 +164,20 @@ public class YoRPG {
 	    //option 2: you slay the beast
 	    else if ( !smaug.isAlive() ) {
         System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+
+        // added things
         System.out.println( "You hath gained 10 XP and climbed one level" +
                             "\t1: Gain 10 health.\n\t2: Gain 10 damage.");
-        e = Integer.parseInt(in.readLine());
-        
-
+        try {
+          f = Integer.parseInt(in.readLine());
+        } catch (IOException z) {
+          System.out.println("Thee hath picked no number!");
+        }
+        if (f == 1) {
+          pat.increaseLevel(10, 0);
+        } else {
+          pat.increaseLevel(0, 10);
+        }
         return true;
 	    }
 	    //option 3: the beast slays you
@@ -168,7 +196,7 @@ public class YoRPG {
     //As usual, move the begin-comment bar down as you progressively
     //test each new bit of functionality...
 
-
+    
     //loading...
     YoRPG game = new YoRPG();
 

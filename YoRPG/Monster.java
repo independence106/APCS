@@ -9,7 +9,7 @@ public class Monster {
 
   public Monster() {
     this.health = 100;
-    this.damage = 15;
+    this.damage = 5;
     this.level = 0;
     this.attackState = "normalize";
   }
@@ -44,7 +44,7 @@ public class Monster {
         System.out.println(this.health);
       }
     } else {
-      damage = 15;
+      damage = 5;
       System.out.println(this.health);
     }
     name.takeDamage(damage);
