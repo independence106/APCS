@@ -1,11 +1,6 @@
 public class Protagonist extends Being {
 
-  private int health;
-  private int maxHealth;
-  private int damage;
-  private String attackState = "";
-  private String protagonistName = "";
-  private int level;
+  
 
 
   public Protagonist() {
@@ -14,36 +9,6 @@ public class Protagonist extends Being {
   public Protagonist(String name) {
     super(name);
     
-  }
-  public String getName() {
-    return this.protagonistName;
-  }
-  public int getHealth() {
-    return this.health;
-  }
-
-  public String toString() {
-    return "Name: " + getName() + "\nLevel: " + this.level + "\nHealth: " + this.health + "\nAttack State" + this.attackState;
-  }
-  public void specialize() {
-    this.attackState = "specialize";
-  }
-  public void normalize() {
-    this.attackState = "normalize";
-  }
-  public boolean isAlive() {
-    return health >= 0;
-  }
-  public void takeDamage(int damage) {
-    this.health -= damage;
-  }
-  public void increaseLevel(int health, int damage) {
-    this.maxHealth += health;
-    this.damage += damage;
-    this.level++;
-  }
-  public void resetHealth() {
-    this.health = maxHealth;
   }
   public int attack(Monster name) {
     if (attackState.equals("specialize")) {

@@ -1,10 +1,10 @@
 public class Being {
-  private int health;
-  private int maxHealth;
-  private int damage;
-  private String attackState = "";
-  private String name = "";
-  private int level;
+  protected int health;
+  protected int maxHealth;
+  protected int damage;
+  protected String attackState = "";
+  protected String name = "";
+  protected int level;
 
   public Being() {
     this.health = 100;
