@@ -1,11 +1,6 @@
 public class Protagonist extends Being {
 
-  private int health;
-  private int maxHealth;
-  private int damage;
-  private String attackState = "";
-  private String protagonistName = "";
-  private int level;
+  
 
 
   public Protagonist() {
