@@ -1,22 +1,23 @@
-public class Protagonist extends Being {
-
+public class Being {
   private int health;
   private int maxHealth;
   private int damage;
   private String attackState = "";
-  private String protagonistName = "";
+  private String name = "";
   private int level;
 
-
-  public Protagonist() {
-    super();
+  public Being() {
+    this.health = 100;
+    this.damage = 15;
+    this.level = 0;
+    this.attackState = "normalize";
   }
-  public Protagonist(String name) {
-    super(name);
-    
+  public Being(String name) {
+    this();
+    this.name = name;
   }
   public String getName() {
-    return this.protagonistName;
+    return this.name;
   }
   public int getHealth() {
     return this.health;
@@ -45,25 +46,7 @@ public class Protagonist extends Being {
   public void resetHealth() {
     this.health = maxHealth;
   }
-  public int attack(Monster name) {
-    if (attackState.equals("specialize")) {
-      //System.out.println("Swinging Hammer...");
-      int amplifier = (int) (Math.random() * 10);
-      if (amplifier > 2) {
-        damage = 15 + amplifier;
-        
-      } else {
-        System.out.println("\nYoug swung too hard, and bashed thy skull! Dizzyness has caused you to forfeit 5 health!");
-        damage = 0;
-        takeDamage(5);
-      }
-    } else {
-      damage = 15;
-      System.out.println(this.health);
-    }
-    name.takeDamage(damage);
-
-    return damage;
+  public int attack() {
+    return 0;
   }
-
 }
