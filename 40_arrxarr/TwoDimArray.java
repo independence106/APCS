@@ -36,30 +36,50 @@ public class TwoDimArray
   //          uses a FOREACH loop
   public static void print2( int[][] a )
   {
-    for (int f : a[]) {
-      System.out.println("\n");
-      for (int i : a[][]) {
-        System.out.print(i);
+
+    for (int[] f : a) {
+      for (int i : f) {
+        System.out.print(i + " ");
       }
+      System.out.println("");
     }
-      // YOUR IMPLEMENTATION HERE
+
+      // YOUR IMPLEMENTATION
   }
 
 
   //postcond: returns sum of all items in 2D int array a
   public static int sum1( int[][] a )
   {
-    return 0;
+    int sum = 0;
+    for (int[] f : a) {
+      for (int i : f) {
+        sum += i;
+      }
+    }
+    return sum;
     // YOUR IMPLEMENTATION HERE
   }
 
+  //Helper function sumRow
+  public static int sumRow1(int [] a) {
+    int sum = 0;
+    for (int i : a) {
+      sum += i;
+    }
+    return sum;
+  }
 
   //postcond: returns sum of all items in 2D int array a
   //          * uses helper fxn sumRow
   public static int sum2( int [][] m )
 
   {
-    return 0;
+    int sum = 0;
+    for (int f[] : m) {
+      sum += sumRow1(f);
+    }
+    return sum;
     // YOUR IMPLEMENTATION HERE
   }
 
@@ -89,7 +109,8 @@ public class TwoDimArray
       int [][] m1 = new int[4][2];
       int [][] m2 = { {2,4,6}, {3,5,7} };
       int [][] m3 = { {2}, {4,6}, {1,3,5} };
-    print2(m2);
+      System.out.println(sum1(m2));
+      System.out.println(sum2(m2));
       /*
       print1(m1);
       print1(m2);
