@@ -36,7 +36,13 @@ public class TwoDimArray
   //          uses a FOREACH loop
   public static void print2( int[][] a )
   {
-    // YOUR IMPLEMENTATION HERE
+    for (int f : a[]) {
+      System.out.println("\n");
+      for (int i : a[][]) {
+        System.out.print(i);
+      }
+    }
+      // YOUR IMPLEMENTATION HERE
   }
 
 
@@ -83,7 +89,7 @@ public class TwoDimArray
       int [][] m1 = new int[4][2];
       int [][] m2 = { {2,4,6}, {3,5,7} };
       int [][] m3 = { {2}, {4,6}, {1,3,5} };
-    print1(m2);
+    print2(m2);
       /*
       print1(m1);
       print1(m2);
