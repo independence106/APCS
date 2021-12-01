@@ -8,6 +8,11 @@
 // APCS pd8
 // HW40 -- 2D arrays
 // 2021-11-30
+// Time taken: 0.2 hr
+
+// Disco: for each seems to work rlly well w/ sums. 
+
+// QCC:
 
 public class TwoDimArray
 {
@@ -61,23 +66,14 @@ public class TwoDimArray
     // YOUR IMPLEMENTATION HERE
   }
 
-  //Helper function sumRow
-  public static int sumRow1(int [] a) {
-    int sum = 0;
-    for (int i : a) {
-      sum += i;
-    }
-    return sum;
-  }
-
   //postcond: returns sum of all items in 2D int array a
   //          * uses helper fxn sumRow
   public static int sum2( int [][] m )
 
   {
     int sum = 0;
-    for (int f[] : m) {
-      sum += sumRow1(f);
+    for (int i = 0; i < m.length; i++) {
+      sum += sumRow(i, m);
     }
     return sum;
     // YOUR IMPLEMENTATION HERE
@@ -88,7 +84,11 @@ public class TwoDimArray
   //          uses a FOR loop
   public static int sumRow( int r, int[][] a )
   {
-    return 0;
+    int sum = 0;
+    for (int i = 0; i < a[r].length; i++) {
+      sum += a[r][i];
+    }
+    return sum;
     // YOUR IMPLEMENTATION HERE
   }
 
@@ -99,6 +99,9 @@ public class TwoDimArray
   {
     // *** YOUR IMPLEMENTATION HERE ***
     int summer = 0;
+    for (int e : m[r]) {
+      summer += e;
+    }
     return summer;
   }
 
@@ -109,9 +112,9 @@ public class TwoDimArray
       int [][] m1 = new int[4][2];
       int [][] m2 = { {2,4,6}, {3,5,7} };
       int [][] m3 = { {2}, {4,6}, {1,3,5} };
-      System.out.println(sum1(m2));
-      System.out.println(sum2(m2));
-      /*
+
+      
+      
       print1(m1);
       print1(m2);
       print1(m3);
@@ -126,7 +129,7 @@ public class TwoDimArray
       System.out.println("sum m1 : " + sum2(m1));
       System.out.println("sum m2 : " + sum2(m2));
       System.out.println("sum m3 : " + sum2(m3));
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+      
 
     // your own custom test cases welcomed and encouraged
   }
