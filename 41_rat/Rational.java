@@ -69,9 +69,29 @@ public class Rational {
         this.num -= r.num * oldDenom;
         this.reduce();
     }
-    public void reduce() {
-
+    public int gcd() {
+       if(this.num == 0 || this.denom == 0){return 0;}
+       int numerator = this.num;
+       int denominator = this.denom;
+       while(numerator != denominator){
+           if(numerator > denominator){numerator -= denominator;}
+           else{denominator -= numerator;}
+       }
+       return numerator;
     }
+
+    public void reduce(){
+       this.num /= gcd();
+       this.denom /= gcd();
+    }
+    public int compareTo(Rational r){
+       int leftProduct = this.num * r.denom;
+       int rightProduct = this.denom * r.num;
+       if(leftProduct == rightProduct){return 0;}
+       if(leftProduct > rightProduct){return 1;}
+       return -1;
+    }
+
 
     public static void main(String[] args) {
         Rational r = new Rational(2, 3);
