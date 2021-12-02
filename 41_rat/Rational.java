@@ -34,31 +34,53 @@ public class Rational {
         return num + " / " + denom;
     }
 
-    public float floatValue() {
-        float value = (float) num / denom;
+    public double floatValue() {
+        double value = (double) num / denom;
         return value;
     }
 
     public void multiply(Rational r) {
-        int argNum = r.getNum();
-        int argDenom = r.getDenom();
-        this.num *= argNum;
-        this.denom *= argDenom;
+        this.num *= r.num;
+        this.denom *= r.denom;
     }
 
     public void divide(Rational r) {
-        if (r.getNum() == 0) {
+        if (r.num == 0) {
             System.out.println("Divide by zero error!");
         } else {
-            int argNum = r.num;
-            int argDenom = r.denom;
-            this.num *= argDenom;
-            this.denom *= argNum;
+            this.num *= r.denom;
+            this.denom *= r.num;
         }
+
+    }
+
+    public void add(Rational r) {
+        int oldDenom = this.denom;
+        this.num *= r.denom;
+        this.denom *= r.denom;
+        this.num += r.num * oldDenom;
+        this.reduce();
+    }
+
+    public void subtract(Rational r) {
+        int oldDenom = this.denom;
+        this.num *= r.denom;
+        this.denom *= r.denom;
+        this.num -= r.num * oldDenom;
+        this.reduce();
+    }
+    public void reduce() {
+
     }
 
     public static void main(String[] args) {
+        Rational r = new Rational(2, 3);
+        Rational z = new Rational(6, 8);
+        r.subtract(z);
+        System.out.println(r.toString());
+
         //courtesy of Gabriel Thompson
+        /*
         System.out.println("\ntoString() and constructor test cases:");
         Rational a = new Rational();
         System.out.println(a + " ...should be \"0 / 1\"");
@@ -95,6 +117,7 @@ public class Rational {
         Rational n = new Rational();
         m.divide(n);
         System.out.println(m + " ...should yield an error\n");
+        */
     }
 
 }
