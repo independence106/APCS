@@ -9,7 +9,7 @@
 // QCC:
 
 public class Rational {
-    
+
     private int num;
     private int denom;
 
@@ -19,21 +19,15 @@ public class Rational {
     }
 
     public Rational(int num, int denom) {
-        this.num = num;
-        this.denom = denom;
-        if (denom == 0) {
+        this();
+        if (denom != 0) {
+          this.num = num;
+          this.denom = denom;
+        } else {
             System.out.println("Invalid Denominator, should not be 0");
-            this.num = 0;
-            this.denom = 1;
+
         }
-        
-    }
-    //Helpful methods:
-    public int getNum() {
-        return this.num;
-    }
-    public int getDenom() {
-        return this.denom;
+
     }
 
     public String toString() {
@@ -55,9 +49,9 @@ public class Rational {
     public void divide(Rational r) {
         if (r.getNum() == 0) {
             System.out.println("Divide by zero error!");
-        } else {    
-            int argNum = r.getNum();
-            int argDenom = r.getDenom();
+        } else {
+            int argNum = r.num;
+            int argDenom = r.denom;
             this.num *= argDenom;
             this.denom *= argNum;
         }
