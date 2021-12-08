@@ -1,18 +1,13 @@
-// Clyde "Thluffy" Sinclair
-// APCS1 pd0
-// HW44 -- expanding SuperArray functionality, encapsulation
-// 2021-12-08w
+// Silly Serpents; Jason Zhou, Vansh Saboo, Tiggy, Tiffany
+// APCS pd8
+// HW44: Array of Grade 316
+// 2021-12-07
+// Time spent: 0.2 hrs
 
 /***************************
- * class SuperArray version 2.0
- * (SKELETON)
- * Wrapper class for array. Facilitates
- * resizing
- * expansion
- * read/write capability on elements
- * adding an element to end of array
- * adding an element at specified index
- * removing an element at specified index
+ * Disco: 
+ * QCC: set ( index, value ), when calling that there seems to not be a good way to increase size
+ *        ([1, 3, 4, 5, 0, 0, 0]) -> set (6, 3), how do we omit the 2 zeroes by just using size?
  ***************************/
 
 public class SuperArray
@@ -49,8 +44,9 @@ public class SuperArray
   private void expand()
   {
     int[] temp = new int[ _data.length * 2 ];
-    for( int i = 0; i < _data.length; i++ )
+    for( int i = 0; i < _data.length; i++ ) {
       temp[i] = _data[i];
+    }
     _data = temp;
   }
 
@@ -68,6 +64,8 @@ public class SuperArray
   {
     int temp = _data[index];
     _data[index] = newVal;
+    //100% wrong but just because
+    _size++;
     return temp;
   }
 
@@ -75,7 +73,7 @@ public class SuperArray
   //adds an item after the last item
   public void add( int newVal )
   {
-    _data[size] = newVal;
+    _data[_size] = newVal;
     _size++;
     /* YOUR IMPLEMENTATION HERE */
   }
@@ -84,7 +82,7 @@ public class SuperArray
   //inserts an item at index
   public void add( int index, int newVal )
   {
-    for (int i = _size - 1; i > index; i--) {
+    for (int i = _size; i > index; i--) {
       _data[i] = _data[i - 1];
     }
     _data[index] = newVal;
@@ -149,15 +147,17 @@ public class SuperArray
       mayfield.add(2);
       mayfield.add(1);
 
+      
       System.out.println("Printing populated SuperArray mayfield...");
       System.out.println(mayfield);
-
+      
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
       mayfield.remove(3);
       System.out.println("Printing SuperArray mayfield post-remove...");
       System.out.println(mayfield);
+      
 
       mayfield.add(3,99);
       System.out.println("Printing SuperArray mayfield post-insert...");
