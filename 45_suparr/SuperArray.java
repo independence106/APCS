@@ -6,12 +6,10 @@
 
 /***************************
  * Disco:
- * QCC: set ( index, value ), when calling that there seems to not be a good way to increase size
- *        ([1, 3, 4, 5, 0, 0, 0]) -> set (6, 3), how do we omit the 2 zeroes by just using size?
+ * QCC: 
  ***************************/
 
-public class SuperArray implements ListInt
-{
+public class SuperArray implements ListInt{
 
   private int[] _data;  //underlying ("encapsulated") container
   private int _size;    //number of elements in this SuperArray
