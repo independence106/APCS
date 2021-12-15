@@ -32,10 +32,11 @@ public class BinSearch
     if (a[m] == target) {
       return m;
     }
-    if (a[m] > target) {
-      return binSearch(a, target, lo, m - 1);
+    
+    if (a[m].compareTo(target) == 1) {
+      return binSearchRec(a, target, lo, m - 1);
     }
-    return binSearch(a, target, m + 1, hi);
+    return binSearchRec(a, target, m + 1, hi);
 
   }//end binSearchRec
 
@@ -137,7 +138,7 @@ public class BinSearch
 
     //search for 43 in array
     System.out.println( binSearch(iArr3,43) );
-    ====================================================*/
+
 
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
