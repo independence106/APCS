@@ -1,17 +1,13 @@
 
-/**
-   class BinSearch
-   Binary search on array of Comparables
-**/
-
 public class BinSearch
 {
 
  
   public static int binSearch ( Comparable[] a, Comparable target ) {
-    
+   
 
     return binSearchIter( a, target, 0, a.length-1 );
+    
   }
 
 
@@ -22,14 +18,17 @@ public class BinSearch
 
     int m = (lo + hi) / 2;
 
+   
     if (lo > hi)
       return tPos; 
+
+
     if ( a[m].compareTo(target) == 0 ) 
       tPos = m;
-    
+ 
     else if ( a[m].compareTo(target) > 0 ) 
       tPos = binSearchRec( a, target, 0, m-1 );
-  
+   
     else if ( a[m].compareTo(target) < 0 ) 
       tPos = binSearchRec( a, target, m+1, hi );
 
@@ -47,11 +46,11 @@ public class BinSearch
 
       m = (lo + hi) / 2; 
 
-     
+      
       if ( a[m].compareTo(target) == 0 ) 
         return m;
 
-      
+     
       else if ( a[m].compareTo(target) > 0 ) 
         hi = m - 1; 
 
@@ -64,9 +63,12 @@ public class BinSearch
 
 
 
+
   private static boolean isSorted( Comparable[] arr )
   {
     boolean retBoo = true; 
+
+    
     for( int i=0; i < arr.length-1; i++ ) {
       if ( ( arr[i].compareTo(arr[i+1]) > 0 ) ) {
         return false;
@@ -75,6 +77,8 @@ public class BinSearch
     return retBoo; 
   }
 
+
+  
   private static void printArray( Comparable[] arr ) {
     String output = "[ "; 
 
@@ -88,7 +92,7 @@ public class BinSearch
 
 
 
-  
+  //main method for testing
   public static void main ( String[] args ) {
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

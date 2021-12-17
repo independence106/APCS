@@ -2,24 +2,20 @@
 public class LinSearch
 {
 
-  
+
   public static int linSearch ( Comparable[] a, Comparable target )
   {
     int tPos = -1;
     int i = 0;
 
     while ( i < a.length ) {
-      if ( a[i].equals(target) ) {
-        tPos = i;
-        break;
-      }
-      i++;
+
     }
     return tPos;
   }
 
 
-  
+
   private static void printArray( Object[] arr )
   {
     String output = "[ ";
@@ -34,8 +30,10 @@ public class LinSearch
 
 
  
+
   public static void main ( String[] args )
   {
+    /*----------------------------------------------------
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     System.out.println("\nNow testing linSearch on int array...");
@@ -71,10 +69,6 @@ public class LinSearch
     //search for "lychee" in array
     System.out.println( linSearch(sArr,"lychee") );
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    /*----------------------------------------------------
-      ----------------------------------------------------*/
-
+    */
+  }
   }//end main()
-
-}//end class LinSearch
