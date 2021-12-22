@@ -29,7 +29,7 @@
  - QCC: N/A
  *****************************************************/
 
-public class Rational implements Comparable{
+public class Rational {
     private int numerator;
     private int denominator;
 
@@ -74,9 +74,10 @@ public class Rational implements Comparable{
         }
     }
     public boolean equals(Object o) {
-
+        Rational e = (Rational) o;
+        try {}
         if (!(o instanceof Rational)) throw new Exception("Not a Rational");
-        return (o.compareTo(this) == 0);
+        return (this.compareTo((Rational) o) == 0);
     }
     public int compareTo(Rational r){
         /*
