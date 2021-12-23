@@ -4,30 +4,10 @@ import java.util.Random;
  * Team: Silly Serpents
  * Team Members (+ Duckies): Vansh Saboo, Jason Zhou: Duckies: Tiggy, Tiffany
  * APCS Pd. 8
- * HW42 -- Be More Rational
- * 2021-12-04
- - Working with Rational objects
- - Time Spent : 0.5 hours
- - DISCO:
-    - For the compareTo method, given the constraints, you could try to return ad - bc when comparing a/b to c/d
-    a/b ___ c/d
-    bd(a/b)  ___ bd(c/d)
-    ad ___ bc
-    ad - bc ___ 0
-
-    (If a/b > c/d, then ad - bc > 0 (+),
-    if ad = c/d, then ad - bc = 0,
-    and if a/b < c/d, then ad - bc < 0 (-) )
-    This would under normal circumstances comply with the expected outputs (positive when a/b > c/d, 0 when a/b = c/d, negative when a/b < c/d)
-
-    - Allowing p & q to be negative complicates the code a lot:
-        - For the GCD method, if p or q are negative, then the subtraction will repeat continually - so use the absolute values of the numerator & denominator instead
-        - For the reduce method, if the denominator is negative, then it's cleanest to negate both the numerator and the denominator,
-        since if both of them are negative, then they'd both be made positive, and otherwise it's cleaner to have -p/q compared to p/-q
-        - The compareTo method returning ad - bc would break down if bd were negative, since you multiply it to both sides of the inequality,
-        and multiplying both sides by a negative value would inverse the inequality. This can be counteracted by multiplying both sides by -1
-        to re-invert the inequality, so you would return bc - ad instead
-
+ * HW49: Rational Standards Compliance
+ * 2021-12-22
+ - Time Spent : 0.3 hours
+ - DISCO: instanceof
  - QCC: N/A
  *****************************************************/
 
@@ -79,8 +59,7 @@ public class Rational implements Comparable {
     }
     public boolean equals(Object o) {
         if (!(o instanceof Rational)) return false;
-        Rational e = (Rational) o;
-        return (Math.abs(this.floatValue() - e.floatValue()) < ERROR);
+        return (this.floatValue() == ((Rational) o).floatValue());
     }
     public int compareTo(Object r){
         /*

@@ -1,3 +1,14 @@
+
+/*****************************************************
+ * Team: Silly Serpents
+ * Team Members (+ Duckies): Vansh Saboo, Jason Zhou: Duckies: Tiggy, Tiffany
+ * APCS Pd. 8
+ * HW49: Rational Standards Compliance
+ * 2021-12-22
+ - Time Spent : 0.3 hours
+ - DISCO: instanceof
+ - QCC: N/A
+ *****************************************************/
 import java.util.Random;
 
 public class Driver {
@@ -35,6 +46,8 @@ public class Driver {
         System.out.println("twelve compareTo eleven?" + twelve.compareTo(eleven)); //SHOULD positive
         System.out.println("ten compareTo twelve?" + ten.compareTo(twelve)); //SHOULD 0
         System.out.println("eight compareTo o?" + eight.compareTo(o)); //SHOULD THROW EXCEPTION
-        
+        Integer e = new Integer(3);
+        int t = 0;
+        e.equals(t);
       }
 }
