@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /*****************************************************
  * Team: Silly Serpents
  * Team Members (+ Duckies): Vansh Saboo, Jason Zhou: Duckies: Tiggy, Tiffany
@@ -29,13 +31,15 @@
  - QCC: N/A
  *****************************************************/
 
-public class Rational {
+public class Rational implements Comparable {
     private int numerator;
     private int denominator;
+    private final double ERROR;
 
     public Rational(){
         numerator = 0;
         denominator = 1;
+        ERROR = 0.000000000001;
     }
     public Rational(int num, int denom){
         this();
@@ -74,12 +78,11 @@ public class Rational {
         }
     }
     public boolean equals(Object o) {
+        if (!(o instanceof Rational)) return false;
         Rational e = (Rational) o;
-        try {}
-        if (!(o instanceof Rational)) throw new Exception("Not a Rational");
-        return (this.compareTo((Rational) o) == 0);
+        return (Math.abs(this.floatValue() - e.floatValue()) < ERROR);
     }
-    public int compareTo(Rational r){
+    public int compareTo(Object r){
         /*
         a/b     ___ c/d
         bd(a/b) ___ (c/d)bd  *
@@ -87,11 +90,16 @@ public class Rational {
         ad - bc ___ 0
         Return ad - bc, unless bd is negative (would invert the inequality - return bc - ad instead)
         */
-
-        int leftProduct = this.numerator * r.denominator;
-        int rightProduct = this.denominator * r.numerator;
-        if(this.denominator * r.denominator < 0){return rightProduct - leftProduct;}
-        else{return leftProduct - rightProduct;}
+        if (r instanceof Rational) {
+            Rational o = (Rational) r;
+            int leftProduct = this.numerator * o.denominator;
+            int rightProduct = this.denominator * o.numerator;
+            if(this.denominator * o.denominator < 0){return rightProduct - leftProduct;}
+            else{return leftProduct - rightProduct;}
+        } else {
+            throw new ClassCastException("\nNot a Rational!");
+        }
+        
     }
 
     public double floatValue(){
@@ -123,16 +131,5 @@ public class Rational {
         this.numerator = this.numerator * other.denominator - other.numerator * this.denominator;
         this.denominator *= other.denominator;
     }
-    public static void main(String[] args){
-      Rational first = new Rational(3, 5);
-      Rational second = new Rational(7, 8);
-
-      Rational third = new Rational(6, 10);
-
-      Rational fourth = new Rational(1, 3);
-
-      System.out.println("First equals second? " + first.compareTo(second));
-      System.out.println("thrid equals fourth? " + third.compareTo(fourth));
-
-    }
+    
 }
