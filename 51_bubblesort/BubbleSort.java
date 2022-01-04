@@ -67,12 +67,14 @@ public class BubbleSort
   public static void bubbleSortV( ArrayList<Comparable> data )
   {
     /* YOUR IMPLEMENTATION HERE */
+    //further optimization
     boolean isSorted = true;
 
     int size = data.size();
     for (int i = 0; i < size; i++) {
       for (int j = size - 1; j > 0; j--) {
         //swapping
+        isSorted = true;
         if (data.get(j).compareTo(data.get(j - 1)) < 0) {
           isSorted = false; //you swap at least once
           int temp = (int) data.get(j);
@@ -83,9 +85,11 @@ public class BubbleSort
           data.add(j - 1, temp);
          
         }
-        if (isSorted) {
-          break;
-        }
+        
+      }
+      if (isSorted) {
+        break;
+        
       }
     }
     
