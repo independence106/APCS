@@ -2,14 +2,20 @@
 // APCS pd8
 // HW51: Dat Bubbly Tho -- implementing bubblesort
 // 2022-01-03
-// time spent:  hrs
+// time spent: 0.2 hrs
 
 /******************************
  * class BubbleSort -- implements bubblesort algorithm (vanilla)
  *
  * ALGO:
+ *    - Go through the array, swapping adjacent elements if needed
+ *    - repeat 
  *
- * DISCO
+ * DISCO:
+ *    - Bubble sort works in O(n^2)
+ *    - The reason why it's n passes is because since you can only swap w/ adjacent elements you need to swap n times
+ *      to bring [x, x, x, leastnum] to [leastnum, x, x, x]
+ *    - Can be further optimized to run faster
  *
  * QCC
  * q0: If a pass requires no swaps, what do you know?
@@ -61,11 +67,14 @@ public class BubbleSort
   public static void bubbleSortV( ArrayList<Comparable> data )
   {
     /* YOUR IMPLEMENTATION HERE */
+    boolean isSorted = true;
+
     int size = data.size();
     for (int i = 0; i < size; i++) {
       for (int j = size - 1; j > 0; j--) {
         //swapping
         if (data.get(j).compareTo(data.get(j - 1)) < 0) {
+          isSorted = false; //you swap at least once
           int temp = (int) data.get(j);
           int temp2 = (int) data.get(j - 1);
           data.remove(j);
@@ -73,6 +82,9 @@ public class BubbleSort
           data.remove(j - 1);
           data.add(j - 1, temp);
          
+        }
+        if (isSorted) {
+          break;
         }
       }
     }
