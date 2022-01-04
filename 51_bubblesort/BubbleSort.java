@@ -1,7 +1,7 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW51 -- implementing bubblesort
-// 2022-01-04t
+// Silly Serpents: Jason Zhou, Vansh Saboo, Tiggy, Tiffany
+// APCS pd8
+// HW51: Dat Bubbly Tho -- implementing bubblesort
+// 2022-01-03
 // time spent:  hrs
 
 /******************************
@@ -13,11 +13,11 @@
  *
  * QCC
  * q0: If a pass requires no swaps, what do you know?
- * a0:
+ * a0: The array is sorted
  * q1: After pass p, what do you know?
- * a1:
+ * a1: The first p elements are sorted
  * q2: How many passes are necessary to completely sort?
- * a2:
+ * a2: n passes
  *
  ******************************/
 
@@ -64,27 +64,54 @@ public class BubbleSort
     int size = data.size();
     for (int i = 0; i < size; i++) {
       for (int j = size - 1; j > 0; j--) {
+        //swapping
         if (data.get(j).compareTo(data.get(j - 1)) < 0) {
-          int temp = data.
+          int temp = (int) data.get(j);
+          int temp2 = (int) data.get(j - 1);
+          data.remove(j);
+          data.add(j, temp2);
+          data.remove(j - 1);
+          data.add(j - 1, temp);
+         
         }
       }
     }
+    
   }
 
 
   // ArrayList-returning bubbleSort
   // postcondition: order of input ArrayList's elements unchanged
   //                Returns sorted copy of input ArrayList.
+  
   public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> input )
   {
-    /* YOUR IMPLEMENTATION HERE */
+    
+    int size = input.size();
+    for (int i = 0; i < size; i++) {
+      for (int j = size - 1; j > 0; j--) {
+        //swapping
+        if (input.get(j).compareTo(input.get(j - 1)) < 0) {
+          int temp = (int) input.get(j);
+          int temp2 = (int) input.get(j - 1);
+          input.remove(j);
+          input.add(j, temp2);
+          input.remove(j - 1);
+          input.add(j - 1, temp);
+         
+        }
+      }
+    }
+    return input;
+
   }
+  
 
 
   public static void main( String [] args )
   {
 
-    /*===============for VOID methods=============
+    
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
       glen.add(1);
@@ -99,29 +126,29 @@ public class BubbleSort
       System.out.println( "ArrayList coco before sorting:\n" + coco );
       bubbleSortV(coco);
       System.out.println( "ArrayList coco after sorting:\n" + coco );
-      ============================================*/
+   
 
-    /*==========for AL-returning methods==========
-      ArrayList glen = new ArrayList<Integer>();
-      glen.add(7);
-      glen.add(1);
-      glen.add(5);
-      glen.add(12);
-      glen.add(3);
-      System.out.println( "ArrayList glen before sorting:\n" + glen );
-      ArrayList glenSorted = bubbleSort( glen );
+   
+      ArrayList gplen = new ArrayList<Integer>();
+      gplen.add(7);
+      gplen.add(1);
+      gplen.add(5);
+      gplen.add(12);
+      gplen.add(3);
+      System.out.println( "ArrayList glen before sorting:\n" + gplen );
+      ArrayList glenSorted = bubbleSort( gplen );
       System.out.println( "sorted version of ArrayList glen:\n"
       + glenSorted );
-      System.out.println( "ArrayList glen after sorting:\n" + glen );
+      System.out.println( "ArrayList glen after sorting:\n" + gplen );
 
-      ArrayList coco = populate( 10, 1, 1000 );
-      System.out.println( "ArrayList coco before sorting:\n" + coco );
-      ArrayList cocoSorted = bubbleSort( coco );
+      ArrayList cocoo = populate( 10, 1, 1000 );
+      System.out.println( "ArrayList coco before sorting:\n" + cocoo );
+      ArrayList cocoSorted = bubbleSort( cocoo );
       System.out.println( "sorted version of ArrayList coco:\n"
       + cocoSorted );
-      System.out.println( "ArrayList coco after sorting:\n" + coco );
-      System.out.println( coco );
-      ============================================*/
+      System.out.println( "ArrayList coco after sorting:\n" + cocoo );
+      System.out.println( cocoo );
+
 
   }//end main
 
