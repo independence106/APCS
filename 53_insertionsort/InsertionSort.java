@@ -1,27 +1,26 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW53 -- implementing insertion sort
-// 2022-01-06r
-// time spent:  hrs
-
+// Frog Hats - Abdullah Faruque, Jason Zhou, Kevin Cheng
+// APCS pd08
+// HW53: Poker Face
+// 2021-1-5
+// time spent: 0.5 hrs
 /******************************
  * class InsertionSort -- implements InsertionSort algorithm
  *
- * ALGO:
+ * ALGO: you go through each item and shift it left until its left side neighbor is greater than the item itself, but also less than its right side neighbor (if there is one)
  *
- * DISCO
+ * DISCO - a pass here is different from a pass in the previous sorting methods
  *
- * QCC
+ * QCC- none atm.
  * q0: How many passes to sort n elements?
- * a0:
+ * a0:length minus 1 
  * q1: What do you know after pass p?
- * a1:
+ * a1: the first p indexes are sorted
  * q2: How will you know when sorted?
- * a2:
+ * a2: when you are done with all the passes
  * q3: What constitues a pass?
- * a3:
+ * a3:shifting the current item to its correct position
  * q4: What must you track?
- * a4:
+ * a4: partition and where the item goes after sorting it.
  ******************************/
 
 
@@ -61,30 +60,25 @@ public class InsertionSort
   // postcondition: data's elements sorted in ascending order
   public static void insertionSortV( ArrayList<Comparable> data )
   {
-    int sorted = 0;
-
-    for(int partition = 0; partition < data.size(); partition++  ) {
+    for(int partition = 1; partition < data.size(); partition++) {
       //partition marks first item in unsorted region
 
       System.out.println( "\npartition: " + partition + "\tdataset:"); //diag
       System.out.println( data );
 
       //traverse sorted region from right to left
-      for(int i = sorted; i > 0; i--  ) {
-        sorted++;
+      for(int i = partition; i > 0; i--) {
+
         // "walk" the current item to where it belongs
         // by swapping adjacent items
-        if ( data.get(i) < data.get(i - 1) ) {
+        if (data.get(i-1).compareTo(data.get(i)) > 0) {
 
           System.out.println( "swap indices "+(i-1)+" & "+i+"..." ); //diag
-          int temp = data.get(i);
-          int temp2 = data.get(i - 1);
 
-          data.remove(i);
-          data.remove(i - 1);
-          data.add(i - 1, data.get(i));
-          data.add(i, data.get(i - 1));
-          //swap
+          Comparable temp = data.get(i);
+          data.remove(temp);
+          data.add(i-1, temp);
+          
         }
         else
           break;
@@ -116,7 +110,7 @@ public class InsertionSort
 
   public static void main( String [] args )
   {
-    /*===============for VOID methods=============
+    
       System.out.println("\n*** Testing sort-in-place (void) version... *** ");
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
@@ -132,7 +126,6 @@ public class InsertionSort
       System.out.println( "\nArrayList coco before sorting:\n" + coco );
       insertionSortV(coco);
       System.out.println( "\nArrayList coco after sorting:\n" + coco );
-      ============================================*/
 
     /*==========for AL-returning methods==========
       System.out.println( "*** Testing non-void version... *** " );
