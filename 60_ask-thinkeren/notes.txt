@@ -1,0 +1,12 @@
+JZ Gang: Jaylen Zeng, Jomin Zhang, Jason Zhou
+
+DISCO: 
+    - Sometimes the simplest instructions are the best
+    - Cannot be fighting over cards
+
+QCC:
+
+Thinker Firmware:
+    - If I was given a deck of cards consisting of more than two cards, split and pass to two thinkeren
+    - If the deck that I was given consists of one card, it is sorted and I give it back
+    - If I am given two decks I will merge them 
