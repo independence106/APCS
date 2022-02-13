@@ -37,5 +37,5 @@ ACTIVITY 3
 
 3) The indexOf method finds the index of the string where the desired character is first located. The substring method returns a string from desired indexes. These two can be combined to divide
    a string into two parts by finding a certain index of a character and then using the substring method to split the String into two parts.  We need to add 1 to the position of the space when copying
-   the remainder of the string because if we are given the string "Hi there" and we want to split it into two strings, you would copy the string from index 0 to the space at 2. If you copy the rest
+   the remainder of the string because if we are given the string "there" and we want to split it into two strings("th" and "ere"), you would copy the string from index 0 to the string at 1. If you copy the rest
    starting from index 2 you get " there". 
