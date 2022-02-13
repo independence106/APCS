@@ -38,4 +38,30 @@ ACTIVITY 3
 3) The indexOf method finds the index of the string where the desired character is first located. The substring method returns a string from desired indexes. These two can be combined to divide
    a string into two parts by finding a certain index of a character and then using the substring method to split the String into two parts.  We need to add 1 to the position of the space when copying
    the remainder of the string because if we are given the string "there" and we want to split it into two strings("th" and "ere"), you would copy the string from index 0 to the string at 1. If you copy the rest
-   starting from index 2 you get " there". 
+   starting from index 2 to index 4 you only get " ther". 
+
+4) In review.java
+
+5) static methods means that you can call them without instantiating the class.
+
+6) We can modify it by replacing getRandomAdjective with getBadAdjective or getGoodAdjective.
+
+ACTIVITY 4
+
+1) One reason would be if you wanted to demote an opposing company's product by generating a lot of negative reviews and thus making it so less people are likely to buy the product.
+
+2) The opposite of 1
+
+3) To create a stronger review, we need it so that our adjectives are consistent with each other (ie, using positive adjectives only or negative adjectives only). The algorithm will take the review
+   and create a star rating. If the star rating is positive then use only positive adjectives and vice versa for negatives.
+
+5) Nothing. It would return oneWord without the first letter. (Pine) -> (ine)
+
+6) Otherwise you would not be able to find it in the hashmap
+
+7) you could optimize it to return very very high value positive words
+
+ACTIVITY 5
+
+
+
