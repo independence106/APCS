@@ -199,7 +199,7 @@ public class QueenBoard
   //main method for testing...
   public static void main( String[] args )
   {
-    QueenBoard b = new QueenBoard(8);
+    QueenBoard b = new QueenBoard(5);
     System.out.println(b);
     /** should be...
        0	0	0	0	0	
