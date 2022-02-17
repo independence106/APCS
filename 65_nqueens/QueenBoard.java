@@ -39,7 +39,7 @@ public class QueenBoard
   {
     addQueen(0, 0);
     for (int i = 1; i < _board.length; i++) {
-      if (solveH(i));
+      if (solveH(i)) break;
     }
     int numQueens = 0;
     for (int i = 0; i < _board.length; i++) {
