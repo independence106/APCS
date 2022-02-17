@@ -39,7 +39,18 @@ public class QueenBoard
   {
     addQueen(0, 0);
     for (int i = 1; i < _board.length; i++) {
-      if (solveH(i)) return true;
+      if (solveH(i));
+    }
+    int numQueens = 0;
+    for (int i = 0; i < _board.length; i++) {
+      for (int e = 0; e < _board.length; e++) {
+        if (_board[i][e] == 1) {
+          numQueens++;
+        }
+      }
+    }
+    if (numQueens == _board.length) {
+      return true;
     }
     return false;
     /*
@@ -63,17 +74,23 @@ public class QueenBoard
   private boolean solveH( int col ) 
   {
     //looping throws rows
-    if (col == _board.length - 1) {
+    if (col == _board.length) {
       return true;
     }
+    
     int e = 0;
     for (int i = 0; i < _board.length; i++) {
       e = i;
-      if (addQueen(i, col)) { return solveH(col + 1);}
-      else {
-        removeQueen(i, col);
+      System.out.println(col);
+      if (addQueen(i, col)) {
+        if (solveH(col + 1)) {
+          return true;
+        } else {
+          removeQueen(i, col);
+        }
       }
     }
+    
     /*
     take in column, and check if there is a placement
     for loop() 
@@ -111,8 +128,8 @@ public class QueenBoard
 
   /***
    * <General description>
-   * precondition: 
-   * postcondition: 
+   * precondition: Row and col are actualy rows and colums
+   * postcondition: adds a queen and adds attack positions if possible
    */
   private boolean addQueen(int row, int col)
   {
@@ -137,9 +154,9 @@ public class QueenBoard
 
   /***
    * <General description>
-   * precondition: 
-   * postcondition: 
-   */
+   * precondition: row and col are actual spots
+   * postcondition: removes a queen and removes attack positions
+    */
   private boolean removeQueen(int row, int col){
     if ( _board[row][col] != 1 ) {
       return false;
@@ -163,8 +180,8 @@ public class QueenBoard
 
   /***
    * <General description>
-   * precondition: 
-   * postcondition: 
+   * precondition: class is instantiated
+   * postcondition: returns string representation
    */
   public String  toString()
   {
@@ -182,7 +199,7 @@ public class QueenBoard
   //main method for testing...
   public static void main( String[] args )
   {
-    QueenBoard b = new QueenBoard(4);
+    QueenBoard b = new QueenBoard(8);
     System.out.println(b);
     /** should be...
        0	0	0	0	0	
@@ -211,6 +228,10 @@ public class QueenBoard
        0	0	0	0	-1	
        0	0	0	0	0	 
     */
+    QueenBoard c = new QueenBoard(4);
+    c.addQueen(0, 0);
+    c.addQueen(2, 1);
+    System.out.println(c);
     
   }
 
