@@ -70,7 +70,9 @@ public class QueenBoard
     for (int i = 0; i < _board.length; i++) {
       e = i;
       if (addQueen(i, col)) { return solveH(col + 1);}
-      else {return false;}
+      else {
+        removeQueen(i, col);
+      }
     }
     /*
     take in column, and check if there is a placement
