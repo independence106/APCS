@@ -17,12 +17,12 @@
  * QCC
  *  - optimization by having it keep track of a grid w/ possible movement thingies
  *
- *
+ * *SPOILER ALERT* I REMOVED PRINTING SCREEN TO SAVE TIME BECAUSE IT WOULD TAKE TOO LONG
  * Mean execution times for boards of size n*n:
- * n=5   __s    across __ executions
- * n=6   __s    across __ executions
- * n=7   __s    across __ executions
- * n=8   __s    across __ executions
+ * n=5   0.268 s    across 5 executions 
+ * n=6   0.2882 s    across 5 executions
+ * n=7   __s    across __ executions //uhh these are taking way too long
+ * n=8   __s    across __ executions //uhh these are taking way too long
  *
  * POSIX PROTIP: to measure execution time from BASH, use time program:
  * $ time java KnightTour 5
@@ -34,7 +34,7 @@ import java.util.*;
 
 public class KnightTour {
     public static void main(String[] args) {
-        int n = 5;
+        int n = 6;
 
         try {
             n = Integer.parseInt(args[0]);
@@ -54,6 +54,7 @@ public class KnightTour {
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // for fixed starting location, use line below:
         tf.findTour( 2, 2, 1 );
+        System.out.println("is done");
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -157,7 +158,7 @@ class TourFinder {
     //primary base case: tour completed
     if (  moves == Math.pow(this._sideLength, 2) + 1 ) {
         this._solved = true;
-        System.out.println( this._board ); //refresh screen
+        System.out.println( this ); //refresh screen
         return;
     }
     //other base case: stepped off board or onto visited cell
@@ -170,7 +171,7 @@ class TourFinder {
     //mark current cell with current move number
     _board[x][y] = moves;
 
-    System.out.println( this ); //refresh screen
+    //System.out.println( this ); //refresh screen
 
     // delay(1000); //uncomment to slow down enough to view
     
@@ -186,8 +187,7 @@ class TourFinder {
     _board[x][y] = 0;
 
 
-    System.out.println( this ); //refresh screen
-    
+    //System.out.println( this ); //refresh screen
     }
     }//end findTour()
 
