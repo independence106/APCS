@@ -1,0 +1,22 @@
+Jason Zhou from Team JZ Gang
+
+APCS Pd 7
+3/2/2022
+
+
+ * n=5   0.268 s    across 5 executions 
+ * n=6   0.2882 s    across 5 executions
+ * n=7   __s    across __ executions //uhh these are taking way too long
+ * n=8   __s    across __ executions //uhh these are taking way too long
+
+ For context, I let n = 7 run with printing screen for 40 minutes and it still didn't solve or even
+ exhaust all possible moves...
+
+ 1. 
+ q0: Yes since the knight has more chances to go to places and ending in random spots
+ q1: No
+ q2:Because the board increases by one, the possibilities for possible knight moves increases exponentially to the point where running a 7 by 7 to solve for possible moves takes a very long time
+ q3: Perhaps have the algo look for optimal positions where the knight would go to the place having the least amount of possible tiles where if you were on that tile you could move to that place. 
+     This eliminates the hard to reach places and perhaps may help.
+
+2. Move in a random location that is permitted. If you cannot proceed in any location, besides forwards, go back to when you could still perform a move and go another direction.

@@ -34,7 +34,7 @@ import java.util.*;
 
 public class KnightTour {
     public static void main(String[] args) {
-        int n = 6;
+        int n = 5;
 
         try {
             n = Integer.parseInt(args[0]);
@@ -53,7 +53,10 @@ public class KnightTour {
 
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // for fixed starting location, use line below:
-        tf.findTour( 2, 2, 1 );
+        for (int i = 2; i < 7; i++) {
+            tf.findTour( 2, i, 1 );
+        }
+        
         System.out.println("is done");
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
