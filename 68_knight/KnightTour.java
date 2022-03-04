@@ -171,7 +171,7 @@ class TourFinder {
     //mark current cell with current move number
     _board[x][y] = moves;
 
-    //System.out.println( this ); //refresh screen
+    System.out.println( this ); //refresh screen
 
     // delay(1000); //uncomment to slow down enough to view
     
@@ -187,7 +187,7 @@ class TourFinder {
     _board[x][y] = 0;
 
 
-    //System.out.println( this ); //refresh screen
+    System.out.println( this ); //refresh screen
     }
     }//end findTour()
 
