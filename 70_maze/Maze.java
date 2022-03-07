@@ -15,9 +15,11 @@
  *
  * ALGORITHM for finding exit from starting position:
  *  
- * Starting at a random position
+ * Starting at a random position go in one of four directions, if you hit a wall, then replace that path with a dot
+ * and go back a try a new path. Repeat until you have hit your goal.
  *
- * DISCO
+ * DISCO:
+ *  -very similar to n queens and knight's tour, but seems inefficient for large mazes
  *
  * QCC
  *
@@ -193,8 +195,8 @@ public class Maze
     int x = (int) (Math.random()) * 80;
     int y  = (int) (Math.random()) * 25;
     while (!ms.onPath(x, y)) {
-      x = (int) (Math.random()) * 80;
-      y  = (int) (Math.random()) * 25;
+      x = (int) ((Math.random()) * 80);
+      y  = (int) ((Math.random()) * 25);
     }
     ms.solve( x, y );
 
