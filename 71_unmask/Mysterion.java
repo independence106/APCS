@@ -124,39 +124,13 @@ public class Mysterion
 
     // run mysterion on each array,
     // holding a & b fixed, varying c...
-    for( int testC = 0; testC < 5; testC++ ) {
-    System.out.println("arr1: ");
-    printArr(arr1);
-    mysterion(arr1,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c=" 
-    + testC +"...");
-    printArr(arr1);
-    System.out.println("-----------------------");
-
-    System.out.println("arr3:");
-    printArr(arr3);
-    mysterion(arr3,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c=" 
-    + testC +"...");
-    printArr(arr3);
-    System.out.println("-----------------------");
-
-    System.out.println("arr4:");
+    mysterion(arr4, 0, 4, 0);
     printArr(arr4);
-    mysterion(arr4,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c=" 
-    + testC +"...");
+    mysterion(arr4, 1, 4, 1);
     printArr(arr4);
-    System.out.println("-----------------------");
-
-    System.out.println("arr5:");
-    printArr(arr5);
-    mysterion(arr5,0,4,testC);
-    System.out.println("after mysterion w/ a=0,b=4,c=" 
-    + testC +"...");
-    printArr(arr5);
-    System.out.println("-----------------------");
+    mysterion(arr4, 2, 4, 2);
+    printArr(arr4);
    
   }//end main
-  }
+  
 }//end class Mysterion
