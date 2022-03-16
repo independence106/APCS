@@ -1,9 +1,9 @@
 /**
  *Team Purple Pineapples: Jason Zhou, Marcus Wu, Russell Goychayev
  *APCS pd7
- *HW76 -- We Got a Little Ol' Convoy
- *2022-03-14
- *time spent: 0.6 hr
+ *HW77 -- Insert|Remove -- add and remove
+ *2022-03-15
+ *time spent: 0.8 hr
  */
 
 /***
@@ -15,6 +15,11 @@
  * DISCO: N/A
  * 
  * QCC: N/A
+ * 
+ * Algo: for add we create holder that points to wherever we want to add. We (break apart) the pointer to the next node
+ *       at insertion and point it to the con cell that we want and we have the con cell point to the next node.
+ * 
+ *       for remove we do the same thing but we don't have that con cell, we just have the node point to two nodes ahead.
  * 
  */
 public class LList implements List //interface def must be in this dir
