@@ -5,9 +5,12 @@
 // time spent: 0.5 hrs
 
 /***
- * Algo: shrink the array (search space until our tracking variable (holder) is equal to the position of what y should be)
- *       if greater than increase bound by 1, or else left bound gets bigger 
- * 
+ * Algo: 1. Shrink the array until it's length is one.
+ 	 2. a = lb, b = length - 1, c = hb - 1
+	 3. compare s and y-1 and if s > y - 1, then arry to the left partition
+	 4. compare s and y-1 and if s < y - 1, then arry to the right partition
+	 5. repeat until s = y - 1.
+ *  
  * BEST CASE: if the element that is the pivot is same as yth smallest. So O(N) also if its ordered i think
  * 
  * ELSE: O(N^2) since we keep searching O(N) N times.
