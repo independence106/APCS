@@ -1,0 +1,9 @@
+Activity 2 Qs:
+
+Q1: A deck contains cards whereas the card is the building block of the deck
+
+Q2: 6
+
+Q3: ranks would be ("Ace"...."King") and for the values it would be ("11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10)
+
+Q4: yes or else you will assign point values to the wrong ranks
