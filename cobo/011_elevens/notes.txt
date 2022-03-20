@@ -7,3 +7,107 @@ Q2: 6
 Q3: ranks would be ("Ace"...."King") and for the values it would be ("11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10)
 
 Q4: yes or else you will assign point values to the wrong ranks
+
+Activity 3 Qs:
+
+
+
+Activity 3 Qs:
+
+Q1: 
+
+public static String flip() {
+    double chances = 0.66;
+    return (Math.random < 0.66) ? "Heads" : "Tails";
+}
+
+Q2:
+
+public static boolean arePermutations(int[] arr1, int[] arr2) {
+    int[] arr1thing = new int[arr1.length];
+    int[] arr2thing = new int[arr1.length];
+
+    for (int i = 0; i < arr1.length; i++) {
+        arr1thing[arr1[i]] = 1;
+    }
+    for (int i = 0; i < arr1.length; i++) {
+        arr1thing[arr2[i]] = 1;
+    }
+
+    for (int i = 0; i < arr1.length; i++) {
+        if (arr1thing[i] != arr2thing[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+Q3: 0, 1
+
+Activity 5 Qs:
+
+1-4: WHERE THE DECK AT?!?!?!
+
+5: <= in isEmpty()
+   k > 0, in shuffle
+   size-- should be after the if not before
+
+Activity 6 Qs:
+
+Where the jar at T-T
+
+Q1. remove 5, 6. remove other 5 and 6. 
+
+Q2. Yes, since the num values are 1-10 and they split evenly so if you remove all the 11s from those it evenly works 
+   so you have to be left with the J, Q, K 
+
+Q3. I don't think so
+
+Activity 7 Qs:
+
+Q1. You need cards, you need a deck and a board/card setup
+
+Q2: 1. Create a deck 
+    2. Create a board
+    3. Shuffle deck 
+    4. Deal cards 
+    5. Wait for user interaction 
+    6. Update game board as necessary
+    7. Game won? - if not continue previous steps
+
+Q3: Yes, no GUI tho :(
+
+-LOL this lab is kinda old, things are deprecated in it XD
+
+Q4: a) When we start a new game and when we create a new board
+    b) in IsLegal
+    c) J, 6, 2, A, 4
+    d) 
+       String retVal = "";
+       for (int i = 0; i < cIndexes.length(); i++) {
+           retVal += cIndexes.get(i) + ", ";
+       }
+       return retVal;
+    e) dealMyCards???
+
+Activity 8 Qs:
+
+Q1: They contain the same concepts, the same beginning start (dealing)
+    However, satifying game conditions and checking certain states are different
+
+Q2: in the constructor, call super
+
+Q3: I believe so, all the methods with implementation are global and all used in 10s, 11s, 13s
+
+Activity 9 Qs:
+
+note -with the helper methods given it was impossible to do (needed the ones given in activity 8)
+
+Q1: because the it just returns size, size differs between the games
+
+Q2: because the index will just be greater and so will the arrauy
+
+Q3: Nooooooo?
+
+
+WAIT WTF I THOUGHT THERE WAS GRAPHCIS WTH HAPPENED, bruh we didnt do any graphics it was all prebuilt
