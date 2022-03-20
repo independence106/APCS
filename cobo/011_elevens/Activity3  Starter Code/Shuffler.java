@@ -1,3 +1,4 @@
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -51,6 +52,21 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int halfPoint = values.length / 2;
+		int[] shuffled = new int[values.length];
+		int k = 0;
+		for (int j = 0; j < halfPoint; j++) {
+			shuffled[k] = values[j];
+			k += 2;
+		}
+		k = 1;
+		for (int j = halfPoint; j < values.length; j++) {
+			shuffled[k] = values[j];
+			k += 2;
+		}
+		for (int i = 0; i < values.length; i++) {
+			values[i] = shuffled[i];
+		}
 	}
 
 	/**
@@ -66,5 +82,25 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		//inefficient version
+	// 	int[] shuffled = new int[values.length];
+	// 	for (int k = 0; k < values.length; k++) {
+	// 		int rando = (int) (Math.random() * values.length);
+	// 		for (;values[rando] == -1;) {
+	// 			rando = (int) (Math.random() * values.length);
+	// 		}
+	// 		shuffled[k] = values[rando];
+	// 		values[rando] = -1;
+	// 	}
+	// 	for (int i = 0; i < values.length; i++) {
+	// 		values[i] = shuffled[i];
+	// 	}
+	// 
+		for (int k = values.length - 1; k > 0; k--) {
+			int randoR = (int) (Math.random() * (k + 1));
+			int holder = values[k];
+			values[k] = values[randoR];
+			values[randoR] = holder;
+		}
 	}
 }
