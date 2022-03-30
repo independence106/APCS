@@ -1,12 +1,10 @@
-// Team Purple Pineapples: Jason Zhou, Russell Goychayev, Marcus Wu
-// APCS pd7
-// HW84: Stack: What Is It Good For?
-// 2022-03-29
-// time spent: 0.4 hr
-
-// Disco: everything is possible w/o peek
-
-// QCC:
+/*
+Team Purple Pineapples: Jason Zhou, Russell Goychayev, Marcus Wu
+APCS pd7
+HW84 -- Stack: What Is It Good For?
+2022-03-29
+time spent: 1.5 hours
+*/
 
 /***
  * class LatKtS
@@ -25,16 +23,20 @@ public class LatKtS
    **/
   public static String flip( String s )
   {
-    Latkes stack = new Latkes(1);
-    String retVal = "";
-    int hrr = 1;
-    for (int i = 0; i < s.length(); i++) {
-      stack.push(s.substring(i, i+1));
-      hrr += 1;
+    //make a Latkes with initCapacity = s.length()
+    Latkes stack = new Latkes( s.length() );
+
+    //push each char of s onto said Latkes
+    for (int i = 0; i<s.length(); i++){
+      stack.push( s.substring( i, i+1) );
     }
-    for (int i = 0; i < hrr - 1; i++) {
+
+    //pop each char of said Latkes into retVal
+    String retVal = "";
+    while ( !stack.isEmpty() ){
       retVal += stack.pop();
     }
+
     return retVal;
   }
 
@@ -47,63 +49,54 @@ public class LatKtS
    **/
   public static boolean allMatched( String s )
   {
-    String[] open = {"(", "{", "["};
-    String[] close = {")", "}", "]"};
-    Latkes stack = new Latkes(1);
 
-    for (int i = 0; i < s.length(); i++) {
-      String ting = s.substring(i, i+1);
-      if (isInArray(ting, close)) {
-        String tempVal = (stack.isEmpty()) ? "" : stack.pop(); // re add (because no method called head rn)
-        if (tempVal == null) {
-          tempVal = "";
+    //initialize a Latkes with initCapacity = s.length()
+    Latkes stack = new Latkes( s.length() );
+
+    /*
+    ALGO:
+    if stack is empty and all chars in s have not yet been added:
+      add the next char in s
+    else:
+      if stack.getLast() is the complement of a given char:
+        stack.pop()
+      else:
+        stack.push( given char )
+    */
+    for (int i=0; i<s.length(); i++){
+      String givenChar = s.substring( i, i+1 );
+
+      if ( stack.isEmpty() ) {
+        stack.push( givenChar );
+      }
+      else {
+        if ( (stack.getLast().equals( "(") && givenChar.equals( ")" )) ||
+             (stack.getLast().equals( "[") && givenChar.equals( "]" )) ||
+             (stack.getLast().equals( "{") && givenChar.equals( "}" )) ) {
+          stack.pop();
+             }
+        else {
+          stack.push( givenChar );
         }
-        if (!(tempVal.equals(open[posInArray(ting, close)]))) { // if ( == ( then we will pop or do nothing
-          return false;
-        }
-      } else {
-        stack.push(s.substring(i, i+1));
       }
     }
-    return stack.pop() == null;
+
+    return stack.isEmpty();
   }
 
-  private static boolean isInArray(String search, String[] vals) {
-    for (int i = 0; i < vals.length; i++) {
-      if (search.equals(vals[i])) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  private static int posInArray(String search, String[] vals) {
-    for (int i = 0; i < vals.length; i++) {
-      
-      if (search.equals(vals[i])) {
-        return i;
-      }
- 
-    }
-    return -1;
-  }
 
 
   //main method to test
   public static void main( String[] args )
   {
-    
-    System.out.println(flip("stressed"));
-    System.out.println(flip("racecar"));
-    
-    System.out.println(allMatched( "({}[()])" )); //true
-    System.out.println(allMatched( "([)]" ) ); //false
-    System.out.println(allMatched( "(){([])}" ) ); //true
-    System.out.println(allMatched( "](){([])}" ) ); //false
-    System.out.println(allMatched( "(){([])}(" ) ); //false
-    System.out.println(allMatched( "()[[]]{{{{((([])))}}}}" ) ); //true
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
-      ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
+
+    //System.out.println(flip("stressed"));
+    //System.out.println(allMatched( "({}[()])" )); //true
+    //System.out.println(allMatched( "([)]" ) ); //false
+    //System.out.println(allMatched( "(){([])}" ) ); //true
+    //System.out.println(allMatched( "](){([])}" ) ); //false
+    //System.out.println(allMatched( "(){([])}(" ) ); //false
+    //System.out.println(allMatched( "()[[]]{{{{((([])))}}}}" ) ); //true
   }
 
 }//end class
