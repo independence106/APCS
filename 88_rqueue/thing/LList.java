@@ -69,6 +69,21 @@ public class LList<T> implements List<T> //interface def must be in this dir
     return holder.getCargo();
   }
 
+  public LLNode<T> getNode( int index )
+  {
+    if ( index < 0 || index >= size() )
+      throw new IndexOutOfBoundsException();
+
+    // YOUR CODE HERE
+    LLNode<T> holder = _head;
+    int num = 0;
+    while (num < index) { 
+      holder = holder.getNext();
+      num++;
+    }
+    return holder;
+  }
+
 
   public T set( int index, T newVal )
   {

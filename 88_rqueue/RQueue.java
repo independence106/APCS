@@ -13,19 +13,20 @@
  *      _end -^                     ^- _front
  *
  **/
-
+import thing.*;
 
 public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
 {
   //instance variables
-  private LLNode<SWASHBUCKLE> _front, _end;
+  private LList<SWASHBUCKLE> queue;
   private int _size;
 
 
   // default constructor creates an empty queue
   public RQueue()
   {
-
+    this.queue = new LList<SWASHBUCKLE>();
+    this._size = 0;
   }
 
 
@@ -56,9 +57,17 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
    **/
   public void sample ()
   {
-
+    for (int k = _size; k >= 0; k--) {
+			int randoR = (int) (Math.random() * (k));
+			LLNode<SWASHBUCKLE> holder = queue.getNode(k);
+			values[k] = values[randoR];
+			values[randoR] = holder;
+		}
   }//O(?)
 
+  private void swap(int index1, int index2) {
+
+  }
 
   public boolean isEmpty()
   {
