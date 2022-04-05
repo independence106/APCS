@@ -1,18 +1,15 @@
+
+
 /***
- * class RQueue
- * SKELETON
- * A node-based, randomized queue
- * (a collection with FIIDKO property)
- *
- *       -------------------------------
- *   end |  --->   Q U E U E   --->    | front
- *       -------------------------------
- *
- *  linkages point opposite direction for O(1) en/dequeuing
- *            N <- N <- ... <- N <- N
- *      _end -^                     ^- _front
- *
- **/
+* Purple Pineapples: Jason Zhou, Russell Goychayev, Marcus Wu
+* APCS
+* HW87: The English Do Not Wait In Line for Soup
+* 04/3/2022
+* time spent: 0.3 hours
+**/
+
+
+
 import thing.*;
 
 public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
@@ -30,54 +27,61 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   }
 
 
-  public void enqueue( T enQVal )
+  public void enqueue( SWASHBUCKLE enQVal )
   {
+    queue.add(enQVal);
+    _size++;
+  }
 
-  }//O(?)
+  public SWASHBUCKLE dequeue() {
+    if (!isEmpty()) {
+        _size--;
+        return queue.remove(_size);
+    }
+    return null;
+    
+    
+}
 
-
-  // remove and return thing at front of queue
-  // assume _queue ! empty
-  public T dequeue()
-  {
-
-  }//O(?)
-
-
-  public T peekFront()
-  {
-
-  }//O(?)
+public SWASHBUCKLE peekFront() {
+    return queue.get(0);
+}
 
 
   /***
    * void sample() -- a means of "shuffling" the queue
    * Algo:
    *   < YOUR SUCCINCT SUMMARY HERE >
+   * 
+   * Takes first item and queue and finds a random place to put it and does this n times
    **/
   public void sample ()
   {
-    for (int k = _size; k >= 0; k--) {
-			int randoR = (int) (Math.random() * (k));
-			LLNode<SWASHBUCKLE> holder = queue.getNode(k);
-			values[k] = values[randoR];
-			values[randoR] = holder;
+    for (int k = _size; k > 0; k--) {
+    
+      int randoR = (int) (Math.random() * (_size));
+      
+      queue.add(randoR, queue.remove(0));
+   
+
+      System.out.println(this);
 		}
-  }//O(?)
-
-  private void swap(int index1, int index2) {
-
-  }
+  }//O(N)
 
   public boolean isEmpty()
   {
-    return _front == null;
-  } //O(?)
+    return _size == 0;
+  } //O(1)
 
 
   // print each node, separated by spaces
   public String toString()
   {
+    String retVal = "First for Soup -> ";
+    for (int i = _size - 1; i >= 0; i--) {
+        retVal += queue.get(i) + ", ";
+    }
+    return retVal + " <- Last for Soup";
 
   }//end toString()
 
@@ -87,8 +91,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   public static void main( String[] args )
   {
 
-      /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
-    
+      
     Queue<String> PirateQueue = new RQueue<String>();
 
     System.out.println("\nnow enqueuing..."); 
@@ -102,6 +105,10 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     System.out.println("\nnow testing toString()..."); 
     System.out.println( PirateQueue ); //for testing toString()...
 
+    System.out.println("now shuffling");
+    ((RQueue<String>) PirateQueue).sample();
+    System.out.println(PirateQueue);
+
     System.out.println("\nnow dequeuing..."); 
     System.out.println( PirateQueue.dequeue() );
     System.out.println( PirateQueue.dequeue() );
@@ -113,7 +120,8 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     System.out.println("\nnow dequeuing fr empty queue...\n" +
                        "(expect NPE)\n"); 
     System.out.println( PirateQueue.dequeue() );
-
+/*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+    
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main

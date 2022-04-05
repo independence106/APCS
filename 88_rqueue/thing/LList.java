@@ -57,7 +57,7 @@ public class LList<T> implements List<T> //interface def must be in this dir
   public T get( int index )
   {
     if ( index < 0 || index >= size() )
-      throw new IndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException("ERRRORORR");
 
     // YOUR CODE HERE
     LLNode<T> holder = _head;
@@ -68,22 +68,6 @@ public class LList<T> implements List<T> //interface def must be in this dir
     }
     return holder.getCargo();
   }
-
-  public LLNode<T> getNode( int index )
-  {
-    if ( index < 0 || index >= size() )
-      throw new IndexOutOfBoundsException();
-
-    // YOUR CODE HERE
-    LLNode<T> holder = _head;
-    int num = 0;
-    while (num < index) { 
-      holder = holder.getNext();
-      num++;
-    }
-    return holder;
-  }
-
 
   public T set( int index, T newVal )
   {
@@ -139,7 +123,7 @@ public class LList<T> implements List<T> //interface def must be in this dir
   public void add( int index, T newVal ) 
   {
     if ( index < 0 || index > size() )
-      throw new IndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException("LSDJF:LSKDJF:");
     LLNode<T> holder = _head;
     if (index == 0) {
       _head = new LLNode<T>(newVal, holder);
@@ -150,6 +134,7 @@ public class LList<T> implements List<T> //interface def must be in this dir
       }
       holder.setNext(new LLNode<T>(newVal, holder.getNext()));
     }
+    _size++;
     
    
 

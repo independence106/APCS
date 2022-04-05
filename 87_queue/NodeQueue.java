@@ -1,14 +1,12 @@
 /***
 * Purple Pineapples: Jason Zhou, Russell Goychayev, Marcus Wu
 * APCS
-* HW87: The English Do Not Wait In Line for Soup
-* 04/3/2022
+* HW88: BPC Kiddies Do Not Wait in Line Either
+* 04/4/2022
 * time spent: 0.3 hours
 **/
 
-// Disco: manipulation can make this perform both stack functions or queue functions, its as simple as changing one param
 
-// QCC: 
 import thing.LList;
 
 
