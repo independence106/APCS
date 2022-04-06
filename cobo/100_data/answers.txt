@@ -12,13 +12,15 @@ Q5: games, f1
 
 Q6: What is the least popular played game, What is the average rubber left on the track after each grand prix
 
-Q7:
+Q7: we used kaggle and searched up f1
 
-Q8:
+Q8: 73 records, larger data sets with more records means you can analyze more or see trends
 
-Q9:
+Q9: You can acccess data and see what things need improvement in society
 
-Q10:
+Q10: It was probably collected by people recording match data to improve performance during matches
+
+Q11: I don't think so??
 
 Activity 2:
 
@@ -56,6 +58,12 @@ Q8: one or two methods and thats it
 
 Activity 4:
 
-Q1: 
+Q1: What are all the tracks ever used in f1 and their stats
 
-Q2: 
+Q2: The data set has tracks along with their specifications, we found this using kaggle 
+
+Q3: we created a class for each datum and then created a driver class to process the data
+
+Q4: The specific instance vas were chosen to represent attributes of that certain track
+
+Q5: circuits.add(new Circuits(things[0], things[1], things[2], things[3], things[4], Double.parseDouble(things[5]), Double.parseDouble(things[6]), o, things[8]));
