@@ -1,5 +1,6 @@
 import java.awt.CardLayout;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -50,9 +51,22 @@ public class CelebrityFrame extends JFrame
 	private void setupFrame()
 	{
 		gamePanel = new CelebrityPanel(controller);
-		panelCards = new JPanel();
+		System.out.println("im here");
 		startPanel = new StartPanel(controller);
+		panelCards = new JPanel();
+		JFrame f= new JFrame("Celebrity");  
 
+		f.add(startPanel);
+		f.setSize(400,400);    
+                f.setLayout(null);    
+                f.setVisible(true);   
+		panelCards.add(startPanel);
+		panelCards.setLayout(null);
+		panelCards.setVisible(true);
+		 
+		  
+         
+		
 	}
 	
 	/**
