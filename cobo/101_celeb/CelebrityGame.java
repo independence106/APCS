@@ -52,7 +52,15 @@ public class CelebrityGame
 	public boolean processGuess(String guess)
 	{
 
-		return false;
+		String validationCheck = guess.trim();
+		boolean match = (validationCheck.equalsIgnoreCase(gameCelebrity.getAnswer()));
+		if (match && getCelebrityGameSize() <= 1) {
+			gameCelebrity = new Celebrity(" ", " ");
+		} else if (match) {
+			celebGameList.remove(gameCelebrity);
+			gameCelebrity = celebGameList.get(0);
+		} 
+		return match;
 	}
 
 	/**
@@ -80,7 +88,17 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		celebGameList.add(new Celebrity(name, guess));
+		switch (type) {
+			case "literature":
+				celebGameList.add(new LiteratureCelebrity(name, guess));
+				break;
+			default:
+				celebGameList.add(new Celebrity(name, guess));
+				break;
+
+		}
+		
+		gameCelebrity = celebGameList.get(getCelebrityGameSize() - 1);
 		
 	}
 
@@ -92,7 +110,7 @@ public class CelebrityGame
 	public boolean validateCelebrity(String name)
 	{
 		String validationCheck = name.trim();
-		return (name.length() >= 4);
+		return (validationCheck.length() >= 4);
 	}
 
 	/**
@@ -125,7 +143,7 @@ public class CelebrityGame
 	 */
 	public String sendClue()
 	{
-		return null;
+		return gameCelebrity.getClue();
 	}
 
 	/**
@@ -136,6 +154,6 @@ public class CelebrityGame
 	 */
 	public String sendAnswer()
 	{
-		return null;
+		return gameCelebrity.getAnswer();
 	}
 }

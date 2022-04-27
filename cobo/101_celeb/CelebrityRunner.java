@@ -3,6 +3,7 @@
  * @author cody.henrichsen
  *
  */
+import java.util.Scanner;
 import java.util.Scanner.*;
 
 public class CelebrityRunner
@@ -13,8 +14,19 @@ public class CelebrityRunner
 	 */
 	public static void main(String [] args)
 	{
+		// Scanner e = new Scanner(System.in);
 		CelebrityGame game = new CelebrityGame();
-		game.prepareGame();
-		game.play();
+		// game.addCelebrity("Hii", "deez", "pikachu");
+		// game.addCelebrity("elll", "asdfasdf", "pikachu");
+		// System.out.println(game.getCelebrityGameSize());
+		// while (game.getCelebrityGameSize() != 0) {
+		// 	System.out.println(game.sendClue());
+		// 	while (!game.processGuess(e.nextLine())) {
+		// 		System.out.println("try again");
+		// 	}
+		// 	System.out.println(game.sendAnswer() + "CORRECT");
+		// }
+		CelebrityFrame e = new CelebrityFrame(game);
+		
 	}
 }
