@@ -1,13 +1,11 @@
 Team Purple Pineapples: Jason Zhou, Marcus Wu, Russell Goychayev
 APCS pd7
-HW95 -- Algorithm as Data Structure
+HW96: BSTs is the Perfect Place for Shade
 2022-05-10
-time elapsed: 0.7 hrs
+time elapsed: 0.5 hrs
 
-Disoc: in the code, the order of the if statements to check left and right matter!!!!
+Disoc: We thought it would be harder, but after sitting down w/ keys and ducky it was much much faster.
+       Talking w/ groupmates made it go faster.
 
 QCC:
 
-1. (2^h)
-2. 2^d ??
-3. 1 + log_2(n)

@@ -129,11 +129,15 @@ public class BST
     }
 
     TreeNode search(TreeNode _root, int target) {
-      if (_root.getValue() == target) return _root; // we have found le target 
-      if (target < _root.getValue()) search(_root.getLeft(), target);
-      else search(_root.getRight(), target);
+      if (_root.getValue() == target) {return _root;}
+      if (target < _root.getValue() && _root.getLeft() != null) {
+        return search(_root.getLeft(), target);
+      } else if (target > _root.getValue() && _root.getRight() != null) {
+        return search(_root.getRight(), target);
+      }
+      return null; // root is not found ! go back!
+      
       //if we are here then we have traversed through the thing but have not found target!!
-      return null;
     }
 
 
@@ -142,21 +146,34 @@ public class BST
      * returns height of this tree (length of longest leaf-to-root path)
      * eg: a 1-node tree has height 1
      *****************************************************/
-    // public int height()
-    // {
-    // 	/*** YOUR IMPLEMENTATION HERE ***/
-    // }
+    public int height()
+    {
+    	/*** YOUR IMPLEMENTATION HERE ***/
+      // need to find the longest subtree strip so need math.max
+      return height(_root);
+    }
 
+    public int height(TreeNode _root) {
+      if (_root == null) return 0; // you have reached bottom / lowest level
+      else return Math.max(height(_root.getLeft()) + 1, height(_root.getRight()) + 1);
+    }
 
     /*****************************************************
      * int numLeaves()
      * returns number of leaves in tree
      *****************************************************/
-    // public int numLeaves()
-    // {
-    // 	/*** YOUR IMPLEMENTATION HERE ***/
+    public int numLeaves()
+    {
+    	/*** YOUR IMPLEMENTATION HERE ***/
+      return numLeaves(_root);
       
-    // }
+    }
+
+    public int numLeaves(TreeNode _root) {
+      if (_root == null) return 0; // you have hit no such things nothing exists go back
+      if (_root.getLeft() == null && _root.getRight() == null) return 1; //this is a leaf
+      else return numLeaves(_root.getLeft()) + numLeaves(_root.getRight()); // binary tree so much traverse left and right subtrees
+    }
 
     
 
@@ -178,6 +195,7 @@ public class BST
       arbol.insert( 6 );
       arbol.insert( 1 );
       arbol.insert( 3 );
+      arbol.insert(2);
 
       // System.out.println( "\n-----------------------------");
       // System.out.println( "pre-order traversal:" );
@@ -195,7 +213,8 @@ public class BST
       /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
 
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-      System.out.println(arbol.search(2));
+      System.out.println(arbol._root.getLeft());
+      System.out.println(arbol.numLeaves());
       System.out.println(new TreeNode(3));
   }
 
