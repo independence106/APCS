@@ -1,5 +1,11 @@
 import java.util.ArrayList;
-
+/***
+ * Team Purple Pineapples: Jason Zhou, Russell Goychayev, Marcus Wu
+ * HW102: Heap On Heapin' On
+ * APCS pd 7
+ * 2022-17-5
+ * time spent: 0.5 hrs
+ */
 /**
  * class ALHeap
  * SKELETON
@@ -32,7 +38,7 @@ public class ALHeap
    */
   public String toString()
   {
-    
+    return "";
   }//O(?)
 
 
@@ -42,6 +48,7 @@ public class ALHeap
    */
   public boolean isEmpty()
   {
+    return _heap.size() == 0;
   }//O(?)
 
 
@@ -52,6 +59,7 @@ public class ALHeap
    */
   public Integer peekMin()
   {
+    return _heap.get(0);
   }//O(?)
 
 
@@ -61,9 +69,19 @@ public class ALHeap
    * Postcondition: Tree exhibits heap property.
    * ALGO:
    * <your clear && concise procedure here>
+   * insert at the end, if less then parent swap, otherwise do nothing
    */
   public void add( Integer addVal )
   {
+    _heap.add(addVal);
+    int addValPos = _heap.size() - 1;
+    int parentPos = (addValPos - 1) / 2; // this floors for us
+  
+    while (_heap.get(addValPos) < _heap.get(parentPos)) {
+      swap(addValPos, parentPos);
+      addValPos = parentPos;
+      parentPos = (addValPos - 1) / 2;
+    }
   }//O(?)
 
 
@@ -73,9 +91,21 @@ public class ALHeap
    * Postcondition: Tree maintains heap property.
    * ALGO:
    * <your clear && concise procedure here>
+   * algo we used in class
    */
   public Integer removeMin()
   {
+    int returnVal = _heap.remove(0); // i remove the first node
+    int lastLeaf = _heap.remove(_heap.size() - 1);
+    _heap.add(0, lastLeaf);
+    int swapthing = 0;
+    while (minChildPos(swapthing) != -1 && _heap.get(minChildPos(swapthing)) < _heap.get(swapthing) ) {
+      int temp = minChildPos(swapthing);
+      swap(swapthing, minChildPos(swapthing));
+      swapthing = temp;
+    }
+    return returnVal;
+
   }//O(?)
 
 
@@ -87,6 +117,16 @@ public class ALHeap
    */
   private int minChildPos( int pos )
   {
+    //do i have children?
+    if ((_heap.size() - 1) < (2*pos) + 1 ) {
+      return -1;
+    }
+    else if(minOf(_heap.get(2*pos + 1), _heap.get(2*pos  +2)) == _heap.get(2*pos + 1)) { // my child smalleest
+      return 2*pos + 1;
+    }
+    else {
+      return 2*pos + 2;
+    }
   }//O(?)
 
 
@@ -111,7 +151,7 @@ public class ALHeap
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
       ALHeap pile = new ALHeap();
 
       pile.add(2);
@@ -157,6 +197,7 @@ public class ALHeap
       System.out.println(pile);
       System.out.println("removing " + pile.removeMin() + "...");
       System.out.println(pile);
+      /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
